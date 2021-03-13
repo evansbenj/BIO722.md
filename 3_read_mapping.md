@@ -12,7 +12,7 @@ The `mem` algorithm of bwa is a great way to map your reads.  You can do this as
 
 If this executed without error, you should have a new bam file in your directory.
 
-`.bam` files are a compressed binary version of a SAM file, whose format is explained [here](https://support.illumina.com/help/BS_App_RNASeq_Alignment_OLH_1000000006112/Content/Source/Informatics/BAM-Format.htm#:~:text=A%20BAM%20file%20(*.,sequences%20up%20to%20128%20Mb.&text=Alignments%E2%80%94Contains%20read%20name%2C%20read,alignment%20information%2C%20and%20custom%20tags.).
+`.bam` files are a compressed binary version of a SAM file, whose format is explained [here](https://samtools.github.io/hts-specs/SAMv1.pdf).
 
 You can check out the contents of a bam file like this:
 ```
