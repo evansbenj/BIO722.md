@@ -166,7 +166,7 @@ mv sample_CACGCAACGA.fq PM592.fq
 mv sample_ATCCGTCTAC.fq PM602.fq
 ```
 
-#Practice Problems
+# Practice Problems
 ## Practice problem 1: How many reads do we have for each individual?
 
 As an exercise, please use the [`grep`](https://man7.org/linux/man-pages/man1/grep.1.html) command to count how many reads we have for each individual.  A hint is that using `grep`, you can count the number of times an identifier character for each sequence appears in each file for each individual.  Another hint is that you can get the manual for any `Unix` command by typing `man command`.  Which individual has the most reads?  Which has the least reads?  Can you think of a reason that some samples have lots of reads while others have less? 
