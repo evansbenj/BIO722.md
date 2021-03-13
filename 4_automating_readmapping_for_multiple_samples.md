@@ -69,11 +69,10 @@ You should see lots of file including, for each sample a `_sorted.bam` file that
 
 
 
-##  Practice Problem 3 (for home): Please try out combining some of the tricks that Brian told you about last class to modify the bash script to run the commands without listing the file names in the script.
+##  Practice Problem 3 (for home): 
 
-Imagine you were using the script above to work with a complete genome alignment.  This could take some time and you want to have some idea of how much progress the script has made.  Can you please use the Unix `echo` command to the bash script to keep you informed about which command is executing.  You could (for example) ask the script to tell you when command 1, 2...5 is done and for which individual it has been completed.
+Please try out combining some of the tricks that Brian told you about last class to modify the bash script to run the commands without listing the file names in the script.
 
 
-
-## Please click [here](https://github.com/evansbenj/XXX) to go to the next page.
+## OK now we are ready to combine our bam files and do some genotyping. Please click [here](https://github.com/evansbenj/XXX)
 
