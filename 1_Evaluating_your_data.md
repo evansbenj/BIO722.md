@@ -24,6 +24,28 @@ This website is written in a markup language called [Markdown](https://en.wikipe
 * We will call genotypes using samtools and bcftools
 * We will calculate some diversity statistics using vcftools
 
+
+## Example data
+The data we will be working with are single end 100 bp reads from one Illumina lane that was collected in 2014. The data are from 9 individuals that were barcoded and multiplexed on this lane (see below for more explanation). The path to the complete dataset is:
+```
+/home/ben/2021_BIO722/complete_data/forward.fastq`
+```
+
+Please use the `ls -lh` command to find out how large the complete dataset is.
+`ls -lh /home/ben/2021_BIO722/complete_data/forward.fastq.gz`
+
+Here the `l` flag asks the list (`ls`) command to provide the long format that has the file size. The 'h' command asks it to list the file size in a *h*uman readable way (using acronyms for bits). As you (hopefully) can see, the compressed file is fairly large (~11 Gb). The uncompressed file is ~3 times larger. Because the tasks we will perform take a while with this much data, I made a smaller dataset (31Mb) to work with here:
+
+`ls -lh /home/ben/2021_BIO722/complete_data/forward.fastq.gz`
+
+In case you are interested, I made this using the unix `cat` and `awk` commands as follows:
+
+`cat forward.fastq | awk 'NR >= 0  && NR <= 500000 { print }' > forward_subset.fastq`
+
+Here the `cat` command pipes the file called 'forward.fastq` to the `awk command. Then the `awk` command searches the number of records `NR` (i.e. the line numbers) from 0-500,000 and prints them to a file called `forward_subset.fastq`.  In this command it is important that the number of lines that you select be divisible by 4, otherwise you will end up with an incomplete fastq entry at the end of the file, which will cause issues.
+
+**FYI, as with most things, I did not figure this out myself, I found it on the internet somewhere.**
+
 # Quality Control, De-multiplexing, and Trimming of Illumina Data
 
 ## Fasta and Fastq format
@@ -47,25 +69,6 @@ Next, please make a symbolic link to a subsetted dataset (`ln -s /1/scratch/monk
 
 OK, now we have the data set up for us to work with.
 
-## Example data
-The data we will be working witb are single end 100 bp reads from one Illumina lane. The data are from 9 individuals that were barcoded and multiplexed on this lane (see below for more explanation). The path to the complete dataset is:
-
-Please use the `ls` command to find out how large the full dataset is.
-`ls -lh /1/scratch/monkey_data2/forward.fastq`
-
-As you (hopefully) can see, this is a large file (~32 Gb).  Because the tasks we will perform take a while with this much data, I made a smaller dataset (32Mb) to work with here:
-
-`ls -lh /1/scratch/monkey_data2/forward_subset.fastq`
-
-In case you are interested, I made this using the unix `cat` and `awk` commands as follows:
-
-`cat forward.fastq | awk 'NR >= 0  && NR <= 500000 { print }' > forward_subset.fastq`
-
-Here the `cat` command pipes the file called 'forward.fastq` to the `awk command. Then the `awk` command searches the number of records `NR` (i.e. the line numbers) from 0-500,000 and prints them to a file called `forward_subset.fastq`.  In this command it is important that the number of lines that you select be divisible by 4, otherwise you will end up with an incomplete fastq entry at the end of the file, which will cause issues.
-
-**FYI, as with most things, I did not figure this out myself, I found it on the internet somewhere.**
-
-## Quality Control
 Before we do anything with individual sequences, it is a good idea to survey the overall quality of the data.  We can do this with many free tools; for this class we will use a program called [FastQC](http://www.bioinformatics.babraham.ac.uk/projects/fastqc/).  To run this program please type this:
 
 `fastqc forward_subset.fastq`
