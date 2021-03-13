@@ -116,7 +116,7 @@ and
 zcat PM582.fastq.gz | more
 ```
 
-OK, so now we should all have some data ready for us to work with.  Later, for funsies, you can try the [Practice Problems](#practice-problems) below
+OK, so now we should all have some data ready for us to work with.  Later, for funsies, you can try the [Practice Problems](#practice-problems) below.  For now, let's move on to [prepare a reference genome]((https://github.com/evansbenj/BIO722.md/blob/main/2_preparing_a_reference_genome.md).
 
 
 ## More Details On Demultiplexing
@@ -175,5 +175,5 @@ As an exercise, please use the [`grep`](https://man7.org/linux/man-pages/man1/gr
 How would your `grep` command differ for a `fasta` file compared to a `fastq` file?
 
 
-## OK, now we are ready to move on to mapping reads to a reference genome.  Please click [here](https://github.com/evansbenj/XXX).
+## OK, now we are ready to prepare a reference genome.  Please click [here](https://github.com/evansbenj/BIO722.md/blob/main/2_preparing_a_reference_genome.md).
 
