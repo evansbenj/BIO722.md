@@ -3,7 +3,7 @@
 # Read mapping
 The `mem` algorithm of bwa is a great way to map your reads.  You can do this as follows:
 
-`bwa mem -M -t 16 -r "@RG\tID:FLOWCELL1.LANE6\tSM:PF515\tPL:illumina" my_monkey_chromosome/chr9.fa samples/PF515.fq | samtools view -bSh - > samples/PF515.bam`
+`bwa mem -M -t 16 -r "@RG\tID:FLOWCELL1.LANE6\tSM:PF515\tPL:illumina" ../my_monkey_chromosome/chr2.fa demultiplexed_subsetted_fq/PF515.fastq.gz | samtools view -bSh - > PF515.bam`
 
 
 ## Practice Problem 4: Assessing coverage
