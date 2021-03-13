@@ -82,18 +82,18 @@ Or you can exist a screen while attached by typing `ctrl-a` and then typing `:qu
 
 
 
-2. We now need to to generate another file using `samtools`.  Please type this:
+2. Some software need an `fai` file that can be generated using `samtools`.  Please type this:
 
-  `samtools faidx my_monkey_chromosome/chr`ZZZ`.fa`
+  `samtools faidx chr`ZZZ`.fa`
 
   Here, the `samtools` command tells the computer to execute the `samtools` program.  The `faidx` option tells samtools to generate a file called `chr`ZZZ`.fai` in which each line has information for one the contigs within the reference genome, including the contig name, size, location and other information.  Our reference genome has a contig for each chromosome.
 
-3.  The third thing we need to do is to generate a `.dict` file with a program called [`picard`](http://broadinstitute.github.io/picard/).  To do this, we need to use the latest version of java.  Please type this command to make a symbolic link to this version:
+3.  If you are going to use GATK for genotyping (which we are not), you will also need a `.dict` file, which can be generated with a program called [`picard`](http://broadinstitute.github.io/picard/).  To do this, we need to use the latest version of java.  Please type this command to make a symbolic link to this version:
 
 `ln -s /home/ben/jre1.8.0_111/bin/java`
 
 OK, now run picard like this:
 
-  `java -jar /usr/local/picard-tools-1.131/picard.jar CreateSequenceDictionary REFERENCE=my_monkey_chromosome/chr`ZZZ`.fa OUTPUT=my_monkey_chromosome/chr`ZZZ`.dict`
+  `java -jar /usr/local/picard-tools-1.131/picard.jar CreateSequenceDictionary REFERENCE=my_monkey_chromosome/chr`ZZZ`.fa OUTPUT=chr`ZZZ`.dict`
 
-  As before, you will need to change the `chr`ZZZ in this command to match the chromosome you are working with.  This should generate a file called `my_monkey_chromosome/chr`ZZZ`.dict`
+  As before, you will need to change the `chr`ZZZ in this command to match the chromosome you are working with.  This should generate a file called `chr`ZZZ`.dict`
