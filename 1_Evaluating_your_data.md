@@ -31,8 +31,10 @@ The data we will be working with are single end 100 bp reads from one Illumina l
 /home/ben/2021_BIO722/complete_data/forward.fastq
 ```
 
-Please use the `ls -lh` command to find out how large the complete dataset is.
-`ls -lh /home/ben/2021_BIO722/complete_data/forward.fastq.gz`
+Please use the `ls -lh` command to find out how large the complete dataset is:
+```
+ls -lh /home/ben/2021_BIO722/complete_data/forward.fastq.gz
+```
 
 Here the `l` flag asks the list (`ls`) command to provide the long format that has the file size. The 'h' command asks it to list the file size in a *h*uman readable way (using acronyms for bits). As you (hopefully) can see, the compressed file is fairly large (~11 Gb). The uncompressed file is ~3 times larger. Because the tasks we will perform take a while with this much data, I made a smaller dataset (31Mb) to work with here:
 
