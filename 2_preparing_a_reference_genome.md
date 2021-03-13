@@ -54,13 +54,13 @@ Before we map our data to this reference genome, we need to generate some files 
 
     The `bwa` command tells the computer to execute the bwa program.  The `index` command tells `bwa` to generate index files from the rhesus genome file that is indicated by the `my_monkey_chromosome/chr`ZZZ`.fa`. The `-a bwtsw` flag specifies the indexing algorithm for `bwa` to use.  
   
-  This step will take a few minutes.
+  This step will take a few minutes. If you are feeling adventurous (and I hope you are!), you can do this in a screen like this:
   
   `screen -S make_an_index_file`
   
   then type this:
   
-  `bwa index -a bwtsw my_monkey_chromosome/chr`ZZZ`.fa`
+  `bwa index chr`ZZZ`.fa`
   
   Then exit the screen by typing `ctrl-a` then `ctrl-d`
   
@@ -77,6 +77,9 @@ Before we map our data to this reference genome, we need to generate some files 
   `ctrl-a` then `ctrl-d` and then
   
   screen -X -S make_an_index_file kill
+
+Or you can exist a screen while attached by typing `ctrl-a` and then typing `:quit`.
+
 
 
 2. We now need to to generate another file using `samtools`.  Please type this:
