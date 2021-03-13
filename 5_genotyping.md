@@ -69,12 +69,12 @@ ln -s /1/scratch/ben/chr9_reference_genome/chr9.fa.sa
 Now, we have everything we need to make a genotype (vcf) file with all of the samples, including:
 * sorted bam files for each sample
 * an index for each bam file (.bai file)
-* a genome (actually a chromosome in our case - chr9.fa) and also supporting files (chr9.fa.dict, chr9.fa.fai, etc).
+* a genome (actually a chromosome in our case for one chromosome - chrZZZ.fa) and also supporting files (chrZZZ.amb  chrZZZ.fa.ann  chrZZZ.fa.bwt  chrZZZ.fa.fai  chrZZZ.fa.pac  chrZZZ.fa.sa).
 
 Please start a screen and type this command:
 
 ```
-./samtools mpileup -d8000 -ugf ./my_chr9/chr9.fa -t DP,AD PF515_chr9_sorted.bam PM561_chr9_sorted.bam PM565_chr9_sorted.bam PM566_chr9_sorted.bam PM567_chr9_sorted.bam PM582_chr9_sorted.bam PM584_chr9_sorted.bam PM592_chr9_sorted.bam PM602_chr9_sorted.bam | ./bcftools call -V indels --format-fields GQ -m -O z -o allsamples_chr9_merged_sorted.bam.vcf.gz
+bcftools mpileup -Ou -f ../my_monkey_chromosome/chr2.fa PF515_chr2_sorted.bam PM561_chr2_sorted.bam PM565_chr2_sorted.bam PM566_chr2_sorted.bam PM567_chr2_sorted.bam PM582_chr2_sorted.bam PM584_chr2_sorted.bam PM592_chr2_sorted.bam PM602_chr2_sorted.bam | bcftools call -mv -Oz -o allsamples_chr9_merged_sorted.bam.vcf.gz
 
 ```
 This will take a while so please exit the screen by typing `ctrl-a` and `ctrl-d`
