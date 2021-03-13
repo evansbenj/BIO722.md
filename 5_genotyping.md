@@ -1,6 +1,6 @@
 # Genotyping with Samtools and bcftools
 
-(Or you can go back to using `Stacks` to make a Structure files [here](XXX).
+(Or you can go back to automating the readmap alignment for multiple samples [here](https://github.com/evansbenj/BIO722.md/blob/main/4_automating_readmapping_for_multiple_samples.md).
 
 Remember previously we made some symbolic links to some sorted bam files I made to chr9 in a directory `/2/scratch/ZZZ/full_data_mapped_to_chr9`.  I made these so we could work with them in class (they take a while to generate). Please enter this directory, and check that they are there.  If not, please make them again like this:
 ```
