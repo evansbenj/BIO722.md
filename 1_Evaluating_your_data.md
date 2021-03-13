@@ -40,11 +40,11 @@ Here the `l` flag asks the list (`ls`) command to provide the *l*ong format that
 
 `ls -lh /home/ben/2021_BIO722/complete_data/forward.fastq.gz`
 
-In case you are interested, I made this using the unix `cat` and `awk` commands as follows:
+In case you are interested, I made this using the unix `zcat` and `awk` commands as follows:
 
-`cat forward.fastq | awk 'NR >= 0  && NR <= 500000 { print }' > forward_subset.fastq`
+`zcat forward.fastq | awk 'NR >= 0  && NR <= 500000 { print }' > forward_subset.fastq`
 
-Here the `cat` command pipes the file called 'forward.fastq` to the `awk command. Then the `awk` command searches the number of records `NR` (i.e. the line numbers) from 0-500,000 and prints them to a file called `forward_subset.fastq`.  In this command it is important that the number of lines that you select be divisible by 4, otherwise you will end up with an incomplete fastq entry at the end of the file, which will cause issues.
+Here the `zcat` command sends each line of 'forward.fastq.gz` to the `awk command. Then the `awk` command searches the number of records `NR` (i.e. the line numbers) from 0-500,000 and prints them to a file called `forward_subset.fastq`.  In this command it is important that the number of lines that you select be divisible by 4, otherwise you will end up with an incomplete fastq entry at the end of the file, which will cause issues.
 
 **FYI, as with most things, I did not figure this out myself, I found it on the internet somewhere.**
 
