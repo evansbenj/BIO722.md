@@ -95,8 +95,6 @@ For those of you that are curious, I have copied below [More Details On Demultip
 
 We have already discussed [fastq](http://en.wikipedia.org/wiki/FASTQ_format) format, quality assessment with [FastQC](http://www.bioinformatics.babraham.ac.uk/projects/fastqc/) and trimming with [TROMMOMATIC](http://www.usadellab.org/cms/?page=trimmomatic). So I won't go over this again.
 
-In the interest of time, I have demultiplexed the sample data. I used 
-
 
 ## Set up a directory on scratch and make symbolic links
 
@@ -109,11 +107,9 @@ Make a directory to work in, and enter that directory:
 mkdir monkey_directory; cd monkey_directory
 ```
 
-Next, please make a symbolic link to a subsetted dataset (`ln -s /1/scratch/monkey_data2/forward_subset.fastq`) and to the full dataset (`ln -s /1/scratch/monkey_data2/forward.fastq`)
+Next, please make a symbolic link to a subsetted dataset (`ln -s /2/scratch/Bio722_BJE/demultiplexed_subsetted_fq/`) 
 
 OK, now we have the data set up for us to work with.
-
-
 
 
 ## More Details On Demultiplexing
