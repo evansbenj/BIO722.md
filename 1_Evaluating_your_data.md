@@ -116,7 +116,7 @@ and
 zcat PM582.fastq.gz | more
 ```
 
-OK, so now we should all have some data ready for us to work with.  Later, for funsies, you can try the [Practice Problems](#practice-problems) below.  For now, let's move on to [prepare a reference genome]((https://github.com/evansbenj/BIO722.md/blob/main/2_preparing_a_reference_genome.md).
+OK, so now we should all have some data ready for us to work with.  Later, for funsies, you can try the [Practice Problems](#practice-problems) below.  For now, let's move on to [prepare a reference genome](https://github.com/evansbenj/BIO722.md/blob/main/2_preparing_a_reference_genome.md).
 
 
 ## More Details On Demultiplexing
