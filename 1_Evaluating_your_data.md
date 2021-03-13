@@ -19,10 +19,10 @@ I've done RADseq multiple times at [Floragenex](http://www.floragenex.com/), whi
 This website is written in a markup language called [Markdown](https://en.wikipedia.org/wiki/Markdown) and hosted by [Github](www.github.com).  I've found both of these tools to be easy to learn and very useful.
 
 # Major goals of this exercise
-* We will prepare a reference genome using the `bwa index` command
-* For multiple individuals, we will map a subsetted de-multiplexed dataset to individual chromosomes in this reference genome using `bwa mem`
-* We will combine these alignments (`.bam` files) and call genotypes using `samtools` and `bcftools`
-* We will calculate some diversity statistics using `vcftools`
+* We will prepare a reference genome using [`bwa`](http://bio-bwa.sourceforge.net/bwa.shtml) using the `index` flag
+* For multiple individuals, we will map a subsetted de-multiplexed dataset to individual chromosomes in this reference genome with `bwa` using the `mem`
+* We will combine these alignments (`.bam` files) and call genotypes using [`samtools`](http://www.htslib.org/) and [`bcftools`](http://www.htslib.org/)
+* We will calculate some diversity statistics using [`vcftools`](https://vcftools.github.io/man_latest.html).
 
 
 ## Example data
