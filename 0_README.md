@@ -13,5 +13,5 @@ The first lecture  will begin with an introduction to read mapping and genotypin
 ## Interactive session 
 We will do a group project that is based on a RRGS dataset from the Tonkean macaque monkey (*Macaca tonkeana*).  Tonkean macaques inhabit the central Indonesian island of Sulawesi and, like other papionin monkeys, have a social system characterized by strong female philopatry and obligate male migration.  Reproductive success is thought to be more variable among males than females.  If this is true, we  expect  molecular polymorphism on the X chromosome to be elevated relative to an expectation with equal variance in reproductive success among the sexes (sounds complicated, but Ben will explain this). To test this hypothesis, each student will map RRGS data from the Tonkean macaque to one of the chromosomes of a closely related species – the rhesus macaque (*Macaca mulatta*), whose genome has been completely sequenced.  We will then evaluate molecular diversity of the X chromosome and the autosomes of the Tonkean macaque, and explore what this can tell us about the social system of these fantastic monkeys.  
  
-## OK, lets begin by clicking [here](https://github.com/evansbenj/XXX).
+## OK, lets begin by clicking [here](https://github.com/evansbenj/BIO722.md/blob/main/1_Evaluating_your_data.md).
 
