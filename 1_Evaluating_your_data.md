@@ -88,7 +88,7 @@ To save time, and also because these days many sequencing centres will demultipl
 
 I used software called `Stacks` to de-multiplex the data.  This is actually a suite of programs and I used the application called `process_radtags` within `Stacks`.  `Stacks` has a very nice online manual [here](http://catchenlab.life.illinois.edu/stacks/manual). Other software that does demultiplexing of RADseq data includes [radpools](https://github.com/johnomics/RADtools) and [cutadapt](https://cutadapt.readthedocs.io/en/stable/).
 
-For those of you that are curious, I have copied below the commands I used for [Demultiplexing](#demultiplexing).  
+For those of you that are curious, I have copied below [More Details On Demultiplexing](#more-details-on-demultiplexing).  
 
 
 ## Trimming and Quality Control of NextGen Data
@@ -116,7 +116,7 @@ OK, now we have the data set up for us to work with.
 
 
 
-## Demultiplexing
+## More Details On Demultiplexing
 
 A first step in analysis of Illumina data is to identify adaptor and barcode sequences in our data, sort sequences by the barcode, and remove adaptor and barcode sequences from the data.  We can also get rid of sequences that have ambiguous barcodes due to sequencing errors. We additionally can get rid of sequences with low quality scores and trim them all so they have the same length (this last step would not normally be done for RNAseq data but it is a reasonable thing to do for RADseq data).
 
