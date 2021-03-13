@@ -30,13 +30,14 @@ In case you missed it, more details about fastq format is available [here](http:
 
 Please login to info, connect to info115 (rsh info115) and navigate to the scratch directory as follows:
 
-`cd /2/scratch/`
+`cd /2/scratch/ZZZZ`, where `ZZZ` is your username (e.g. `gradstd13`).
 
-And make a directory for yourself
+Make a directory to work in, and enter that directory:
+```
+mkdir monkey_directory; cd monkey_directory
+```
 
-`mkdir ZZZ`, where `ZZZ` is your username.
-
-Next, please switch to that directory (`cd ZZZ`) and make a symbolic link to a subsetted dataset (`ln -s /1/scratch/monkey_data2/forward_subset.fastq`) and to the full dataset (`ln -s /1/scratch/monkey_data2/forward.fastq`)
+Next, please make a symbolic link to a subsetted dataset (`ln -s /1/scratch/monkey_data2/forward_subset.fastq`) and to the full dataset (`ln -s /1/scratch/monkey_data2/forward.fastq`)
 
 OK, now we have the data set up for us to work with.
 
