@@ -107,9 +107,16 @@ Make a directory to work in, and enter that directory:
 mkdir monkey_directory; cd monkey_directory
 ```
 
-Next, please make a symbolic link to a subsetted dataset (`ln -s /2/scratch/Bio722_BJE/demultiplexed_subsetted_fq/`) 
+Next, please make a symbolic link to a subsetted dataset (`ln -s /2/scratch/Bio722_BJE/demultiplexed_subsetted_fq/`).  This is a useful way to manage information and avoid duplicating files and using up Brian's disk space. You can check out the data like this:
+```
+cd demultiplexed_subsetted_fq
+```
+and
+```
+zcat PM582.fastq.gz | more
+```
 
-OK, now we have the data set up for us to work with.
+OK, so now we should all have some data ready for us to work with.  Later, for funsies, you can try the [Practice Problems](#practice-problems) below
 
 
 ## More Details On Demultiplexing
@@ -158,6 +165,8 @@ mv sample_CGCTATACGG.fq PM584.fq
 mv sample_CACGCAACGA.fq PM592.fq
 mv sample_ATCCGTCTAC.fq PM602.fq
 ```
+
+#Practice Problems
 ## Practice problem 1: How many reads do we have for each individual?
 
 As an exercise, please use the [`grep`](https://man7.org/linux/man-pages/man1/grep.1.html) command to count how many reads we have for each individual.  A hint is that using `grep`, you can count the number of times an identifier character for each sequence appears in each file for each individual.  Another hint is that you can get the manual for any `Unix` command by typing `man command`.  Which individual has the most reads?  Which has the least reads?  Can you think of a reason that some samples have lots of reads while others have less? 
