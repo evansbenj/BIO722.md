@@ -164,17 +164,11 @@ mv sample_ATCCGTCTAC.fq PM602.fq
 ```
 ## Practice problem 1: How many reads do we have for each individual?
 
-As an exercise, please use the [`grep`](http://unixhelp.ed.ac.uk/CGI/man-cgi?grep) command to count how many reads we have for each individual.  A hint is that using `grep`, you can count the number of times an identifier character for each sequence appears in each file for each individual.  Another hint is that you can get the manual for any `Unix` command by typing `man command`.  Which individual has the most reads?  Which has the least reads?  Can you think of a reason that some samples have lots of reads while others have less?  You should be able to confirm your read count with the number in the log file from `process_radtags`.
+As an exercise, please use the [`grep`](https://man7.org/linux/man-pages/man1/grep.1.html) command to count how many reads we have for each individual.  A hint is that using `grep`, you can count the number of times an identifier character for each sequence appears in each file for each individual.  Another hint is that you can get the manual for any `Unix` command by typing `man command`.  Which individual has the most reads?  Which has the least reads?  Can you think of a reason that some samples have lots of reads while others have less? 
 
+## Practice problem 2: 
 How would your `grep` command differ for a `fasta` file compared to a `fastq` file?
 
-## Practice problem 2: How did trimming affect the quality assay?
 
-Please use FastQC to evaluate read quality of your trimmed sequences.  How do the trimmed reads differ from the untrimmed reads?
-
-## Practice problem 3 (for home): Please do this with the full dataset (`forward.fastq`)
-
-After class, please use `process_radtags` to demultiplex the full dataset located here:
-
-## OK, now we are ready to move on to mapping reads to a reference genome.  Please click [here](https://github.com/evansbenj/BIO720/blob/master/2_Lecture_2_reference_genomes_and_read_mapping.md).
+## OK, now we are ready to move on to mapping reads to a reference genome.  Please click [here](https://github.com/evansbenj/XXX).
 
