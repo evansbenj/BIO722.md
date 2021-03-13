@@ -97,3 +97,6 @@ OK, now run picard like this:
   `java -jar /usr/local/picard-tools/picard.jar CreateSequenceDictionary REFERENCE=chr`ZZZ`.fa OUTPUT=chr`ZZZ`.dict`
 
   As before, you will need to change the `chr`ZZZ in this command to match the chromosome you are working with.  This should generate a file called `chr`ZZZ`.dict`
+  
+  
+  ## OK, now we are ready to map reads to our reference genome (chromosome).  Please click [here](https://github.com/evansbenj/BIO722.md/blob/main/3_read_mapping.md
