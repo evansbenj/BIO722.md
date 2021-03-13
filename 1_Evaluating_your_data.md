@@ -28,7 +28,7 @@ This website is written in a markup language called [Markdown](https://en.wikipe
 ## Example data
 The data we will be working with are single end 100 bp reads from one Illumina lane that was collected in 2014. The data are from 9 individuals that were barcoded and multiplexed on this lane (see below for more explanation). The path to the complete dataset is:
 ```
-/home/ben/2021_BIO722/complete_data/forward.fastq`
+/home/ben/2021_BIO722/complete_data/forward.fastq
 ```
 
 Please use the `ls -lh` command to find out how large the complete dataset is.
@@ -51,7 +51,7 @@ Most RRGS methods rely on the "short" (101-251 bp) read sequencing platform.  Th
 
 Note that this barcode is different from "DNA barcoding", the latter of which generally refers to the use of a small variable genomic region (such as the COI gene for animals) for species and population identification.
 
-A first step in our analysis pipeline is to organize data from each of our samples that were run together on an Illumina lane (De-multiplexing our data) and also to filter our data and trim off bits that have lots of errors or that have sequences from the laboratory procedures that were used to generate the data (Trimming/Quality control).  
+A first step in our analysis pipeline is to organize data from each of our samples that were run together on an Illumina lane (demultiplexing our data) and also to filter our data and trim off bits that have lots of errors or that have sequences from the laboratory procedures that were used to generate the data (Trimming/Quality control).  
 
 When samples are run on an Illumina machine, DNA is broken up into many small fragments and a small bit of DNA called an adaptor is then added on each of the fragments. This adaptor allows the sequencing process to occur, essentially by making possible high-throughput primer extension with fluorescent terminator nucleotides (ask Ben about this if you are unfamiliar). To make possible the multiplexing of samples on one Illumina lane, each sample is linked to a unique adaptor that contains a "barcode" sequence that allows us to sort out which samples each sequence came from.  For our dataset, we have nine individuals from one species (the Tonkean macaque). Each of the samples received the following barcodes:
 
@@ -79,7 +79,12 @@ CGCTATACGG	PM584
 CACGCAACGA	PM592
 ATCCGTCTAC	PM602
 ```
-We will use this information in a moment to de-multiplex our data. Please use your favourite text editor to generate a file in your home directory (`/2/scratch/ZZZ/`) called `monkey.barcodes` and paste in only the barcode sequences (without the sample names). 
+To save time, and also because these days many sequencing centres will demultiplex your data for you, have already used this information to de-multiplex our data. I put these data here:
+```
+/2/scratch/Bio722_BJE/demultiplexed_subsetted_fq/
+```
+
+I used software called `Stacks` to de-multiplex the data.  This is actually a suite of programs and I used the application called `process_radtags` within `Stacks`.  `Stacks` has a very nice online manual [here](http://catchenlab.life.illinois.edu/stacks/manual). Other software that does demultiplexing of RADseq data includes [radpools](https://github.com/johnomics/RADtools) and [cutadapt](https://cutadapt.readthedocs.io/en/stable/).
 
 
 ## Trimming and Quality Control of NextGen Data
