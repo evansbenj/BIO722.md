@@ -94,6 +94,6 @@ Or you can exist a screen while attached by typing `ctrl-a` and then typing `:qu
 
 OK, now run picard like this:
 
-  `java -jar /usr/local/picard-tools-1.131/picard.jar CreateSequenceDictionary REFERENCE=my_monkey_chromosome/chr`ZZZ`.fa OUTPUT=chr`ZZZ`.dict`
+  `java -jar /usr/local/picard-tools/picard.jar CreateSequenceDictionary REFERENCE=chr`ZZZ`.fa OUTPUT=chr`ZZZ`.dict`
 
   As before, you will need to change the `chr`ZZZ in this command to match the chromosome you are working with.  This should generate a file called `chr`ZZZ`.dict`
