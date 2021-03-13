@@ -12,7 +12,7 @@ Your statistical power, precision, and accuracy will depend on the quantity and 
 
 ## How much does this cost and where can I do it?
 
-I've done RADseq multiple times at [Floragenex](http://www.floragenex.com/), which is located in Oregon, USA.  I've also done Genotype by Sequencing at [Cornell University](http://www.biotech.cornell.edu/brc/genomic-diversity-facility) in New York, USA and most recently at Genome Quebec (https://www.genomequebec.com/).  In 2017, the prices for a 95 RADseq sample run, including library preparation but no bioinformatics is  US$3325. 150bp single end reads on one lane of a HiSeq4000 machine will cost around US$1670. I anticipate that the cost of these services will decline considerably over the next few years and that more sequencing centers will offer this service.
+I've done RADseq multiple times at [Floragenex](http://www.floragenex.com/), which is located in Oregon, USA.  I've also done Genotype by Sequencing at [Cornell University] in New York, USA and most recently at Genome Quebec (https://www.genomequebec.com/). Plenty of places to GBS now.  I had a great experience with Genome Quebec and plan to use that facility in the future. In 2017, the prices for a 95 RADseq sample run, including library preparation but no bioinformatics was  ~US$3300. In 2020, the cost was less (~CAD$3000) for 150 bp single end reads, but for runs on a newer machine that yeilded with much higher coverage. I anticipate that the cost of these services will continue to go down even more over the next few years.
 
 ## A quick note about Markdown and Github
 
@@ -22,23 +22,9 @@ This website is written in a markup language called [Markdown](https://en.wikipe
 
 ## Fasta and Fastq format
 
-Illumina sequence data is provided in a text file that is in a format called `fastq`.  This is a modification of another format called `fasta` in which each sequence has a header that begins with a `>` sign.  This is followed by the sequences.  Here is an example:
+We have already discussed fastq format, quality assessment with fastqc and trimming with trimmomatic. So I won't go over this again.
 
-```
->example_sequence_in_fasta_format`
-ATGCGCGCGCTAGGCTCGCGATCGGGGAGCGCGAGCTGAGCTAGCGCGATGCGCCCCGAC
-```
-
-The format of `fastq` files is similar to `fasta` except that quality scores are included.  Each sequence has four lines (instead of two for `fasta` files).  The first begins with `@` followed by information about the sequence.  The second line is the nucleotide sequence. The third line is a `+` which may be followed by the same information that followed the `@` sign in the first line.  The fourth line is the quality values.  For the Illumina data we will be working with, these values range from 0–41 and are represented by single characters.  More details about fastq format is available [here](http://en.wikipedia.org/wiki/FASTQ_format).  Here is an example of a sequence in fastq format:
-
-```
-@HWI-ST724:202:D127MACXX:6:2114:13665:74490
-TGCAGGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGGAAATTTTTGGGCACAAAGAACCACAGAAAAAAAATGAAAA
-+HWI-ST724:202:D127MACXX:6:2114:13665:74490
-AFHJJJFIJJJJIJJJJJHFDDDDDB0530&0)00&)0&05007BDD############################################
-```
-
-In this sequence the number signs indicate low quality reads at the end (right side) of the sequence.  
+In case you missed it, more details about fastq format is available [here](http://en.wikipedia.org/wiki/FASTQ_format).  
 
 ## Set up a directory on scratch and make symbolic links
 
