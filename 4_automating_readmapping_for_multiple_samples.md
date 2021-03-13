@@ -12,9 +12,9 @@ I have set the chromosome to take a argument that we will pass to the script whe
 ```
 #!/bin/bash                                                                                            
 
-path_to_data="/2/scratch/USERNAME/monkey_directory/demultiplexed_subsetted_fq"
-path_to_chromosome="/2/scratch/USERNAME/monkey_directory/my_monkey_chromosome/"
-chromosome=${1}.fa
+path_to_data="/2/scratch/evanslab/monkey_directory/demultiplexed_subsetted_fq/"
+path_to_chromosome="/2/scratch/evanslab/monkey_directory/my_monkey_chromosome/"
+chromosome=${1}
 
 individuals="PF515                                                                                     
 PM561                                                                                                  
@@ -28,10 +28,22 @@ PM602"
 
 for each_individual in $individuals
 do
+    # echo which individual we are on
     echo ${each_individual}
-    bwa mem -M -t 16 -r "@RG\tID:FLOWCELL1.LANE6\tSM:${each_individual}\tPL:illumina" ../my_monkey_chromosome/${chromosome}.fa ../demultiplexed_subsetted_fq/${each_individual}.fastq.gz | samtools view -bSh - > ${each_individual}_chrZZZ.bam
-    samtools sort ${each_individual}_$chromosome.bam ${each_individual}_${chromosome}_sorted
+
+    # align the data to the reference gemome
+    bwa mem -t 16 -R "@RG\tID:FLOWCELL1.LANE6\tSM:${each_individual}\tPL:illumina" ../my_monkey_chromosome/${
+chromosome}.fa ../demultiplexed_subsetted_fq/${each_individual}.fastq.gz | samtools view -bSh - > ${each_indi
+vidual}_${chromosome}.bam
+
+    # sort the bam file
+    samtools sort ${each_individual}_$chromosome.bam -o ${each_individual}_${chromosome}_sorted.bam
+    
+    # index the sorted bam file
     samtools index ${each_individual}_${chromosome}_sorted.bam
+    
+    # clean up unsorted file
+    rm ${each_individual}_${chromosome}.bam
 done
 
 ```
@@ -44,22 +56,17 @@ Now we need to make the file executable, so type this:
 
 And now we should be able to execute the file.  Type this:
 
-`./alignment_commando`
+`./alignment_commando chrZZZ`
 
-Here we needed to preceed the name of our `bash` script by `./` to tell the computer where to find our script (i.e. in the current working directory).
+Here we needed to preceed the name of our `bash` script by `./` to tell the computer where to find our script (i.e. in the current working directory). Also, instead of `chrZZZ` you should add whatever your chromosome is (e.g. `chr2` or `chr9`).
 
-Now please check whether this worked by checking out the file size of the files in your `~/samples` directory like this:
+Now please check whether this worked by checking out the file size of the `.bam` files in your directory like this:
 
-`ls -l samples`
+`ls -l`
 
-You should see lots of file including, for each sample a `_sorted.bam` file that is not of file size zero.
+You should see lots of file including, for each sample a `_sorted.bam` file that is not of file size zero.  Each file should have an index (`.bai`) as well.
 
-If this worked, you can now delete the intermediate files like this:
 
-```
-rm -f samples/*_chrZZZ.bam
-rm -f samples/*.sai
-```
 
 
 ##  Practice Problem 3 (for home): Please try out combining some of the tricks that Brian told you about last class to modify the bash script to run the commands without listing the file names in the script.
