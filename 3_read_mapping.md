@@ -8,7 +8,7 @@ cd ..; mkdir my_bam_files; cd my_bam_files
 
 The `mem` algorithm of bwa is a great way to map your reads.  You can do this as follows:
 
-`bwa mem -M -t 16 -r "@RG\tID:FLOWCELL1.LANE6\tSM:PF515\tPL:illumina" ../my_monkey_chromosome/chrZZZ.fa demultiplexed_subsetted_fq/PF515.fastq.gz | samtools view -bSh - > PF515_chrZZZ.bam`
+`bwa mem -M -t 16 -r "@RG\tID:FLOWCELL1.LANE6\tSM:PF515\tPL:illumina" ../my_monkey_chromosome/chrZZZ.fa ../demultiplexed_subsetted_fq/PF515.fastq.gz | samtools view -bSh - > PF515_chrZZZ.bam`
 
 Where `_chrZZZ` should be replaced with whatever chr you are working with. If this executed without error, you should have a new bam file in your directory.
 
