@@ -21,7 +21,7 @@ This website is written in a markup language called [Markdown](https://en.wikipe
 # Major goals of this exercise
 * We will prepare a reference genome using [`bwa`](http://bio-bwa.sourceforge.net/bwa.shtml) using the `index` flag
 * For multiple individuals, we will map a subsetted de-multiplexed dataset to individual chromosomes in this reference genome with `bwa` using the `mem`
-* We will combine these alignments (`.bam` files) and call genotypes using [`samtools`](http://www.htslib.org/) and [`bcftools`](http://www.htslib.org/)
+* We will combine these alignments (`.bam` files) and call genotypes simultaneously for all samples using [`samtools`](http://www.htslib.org/) and [`bcftools`](http://www.htslib.org/)
 * We will calculate some diversity statistics using [`vcftools`](https://vcftools.github.io/man_latest.html).
 
 
