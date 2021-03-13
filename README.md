@@ -1,2 +1,17 @@
-# BIO722.md
-A repo for BIO722
+# BIO722
+This is the BJE portion of the BIO722 graduate course in Advanced Bioinformatics.  This section will be divided into two 2 hour interactive lectures. THe first will be designed around a group project on macaque genomics that uses reduced representation genome sequence data and a reference genome.  
+
+## Background
+Many interesting organisms have big genomes, making complete genome sequencing infeasible, especially for multiple individuals.  A relatively cost-efficient solution has been developed recently called "reduced representation genome sequencing" (RRGS).  This approach enables deep sequencing of multiple genetic samples from the same (homologous) genomic regions.  It takes advantage of next generation (Illumina) sequencing technology and requires relatively simple laboratory preparation (DNA extraction), which can be accomplished with a centrifuge and a heat block.  Other laboratory steps (library construction) can be outsourced or done in house, depending on the equipment and funds that are available. This approach has many applications, including phylogenomics, population genomics, linkage mapping, and analysis of gene flow.
+
+## Goals
+The goal of this section of the course is to introduce students to some basic aspects of bioinformatic analysis of genomic data with the major objective of providing background that students can build on. Ideally this  will provide a sufficient level of exposure to students that they will be able to figure out how to learn more and generate and analyze their own datasets. Many of the approaches to analyze RRGS data are identical to WGS data (e.g., demultiplexing, trimming, mapping to a reference, read filtering, genotyping, etc) so even if you work on things with small genomes, the approaches will still be applicable.
+
+## Specific Topics
+The first lecture  will begin with an introduction to read mapping and genotyping. The remainder of this and subsequent lectures will be interactive, and will include (a) exploration of the example Illumina data, including an explanation of fastq format and de-multiplexing of multiplexed samples, (b) reference genomes, and aligning sequence data to a reference genomes, (c) base recalibration and genotype calling, and (d) applications to phylogenomics and population genomics.  
+
+## Interactive session 
+We will do a group project that is based on a RRGS dataset from the Tonkean macaque monkey (*Macaca tonkeana*).  Tonkean macaques inhabit the central Indonesian island of Sulawesi and, like other papionin monkeys, have a social system characterized by strong female philopatry and obligate male migration.  Reproductive success is thought to be more variable among males than females.  If this is true, we  expect  molecular polymorphism on the X chromosome to be elevated relative to an expectation with equal variance in reproductive success among the sexes (sounds complicated, but Ben will explain this). To test this hypothesis, each student will map RRGS data from the Tonkean macaque to one of the chromosomes of a closely related species – the rhesus macaque (*Macaca mulatta*), whose genome has been completely sequenced.  We will then evaluate molecular diversity of the X chromosome and the autosomes of the Tonkean macaque, and explore what this can tell us about the social system of these fantastic monkeys.  
+ 
+## OK, lets begin by clicking [here](https://github.com/evansbenj/XXX).
+
