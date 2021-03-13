@@ -46,45 +46,14 @@ Here the `cat` command pipes the file called 'forward.fastq` to the `awk command
 
 **FYI, as with most things, I did not figure this out myself, I found it on the internet somewhere.**
 
-# Quality Control, De-multiplexing, and Trimming of Illumina Data
-
-## Fasta and Fastq format
-
-We have already discussed fastq format, quality assessment with [FastQC](http://www.bioinformatics.babraham.ac.uk/projects/fastqc/) and trimming with [TROMMOMATIC](http://www.usadellab.org/cms/?page=trimmomatic). So I won't go over this again.
-
-In case you missed it, more details about fastq format is available [here](http://en.wikipedia.org/wiki/FASTQ_format).  
-
-## Set up a directory on scratch and make symbolic links
-
-Please login to info, connect to info115 (rsh info115) and navigate to the scratch directory as follows:
-
-`cd /2/scratch/ZZZZ`, where `ZZZ` is your username (e.g. `gradstd13`).
-
-Make a directory to work in, and enter that directory:
-```
-mkdir monkey_directory; cd monkey_directory
-```
-
-Next, please make a symbolic link to a subsetted dataset (`ln -s /1/scratch/monkey_data2/forward_subset.fastq`) and to the full dataset (`ln -s /1/scratch/monkey_data2/forward.fastq`)
-
-OK, now we have the data set up for us to work with.
-
-Before we do anything with individual sequences, it is a good idea to survey the overall quality of the data.  We can do this with many free tools; for this class we will use a program called [FastQC](http://www.bioinformatics.babraham.ac.uk/projects/fastqc/).  To run this program please type this:
-
-`fastqc forward_subset.fastq`
-
-This should give you some feedback about the analysis as it runs and generate an html file called `forward_subset_fastqc.html`.
-
-Please download the `html` file to your local computer and open it in a browser (or watch Ben do this).
-
 ## De-Multiplexing
-Most RRGS methods rely on the Illumina sequencing platform.  These machines generate data using something called a "flowcell" that is divided up into eight "lanes". Small scale projects typically would run multiple samples (from different species or different individuals within a species) on one lane. Because the sequence methodology requires the ligation (attachment) of a linker (a bit of DNA) to each side of bits of DNA that will be sequenced, it is straightforward to combine multiple samples (multiplex) from different individuals in a single lane. This is done by adding a unique identifier sequence (a barcode) to the linker that is used on each sample.  
+Most RRGS methods rely on the "short" (101-251 bp) read sequencing platform.  These machines generate data using something called a "flowcell" that is divided up into eight "lanes". Small scale projects typically would run multiple samples (from different species or different individuals within a species) on one lane. Because the sequence methodology requires the ligation (attachment) of a linker (a bit of DNA) to each side of bits of DNA that will be sequenced, it is straightforward to combine multiple samples (multiplex) from different individuals in a single lane. This is done by adding a unique identifier sequence (a barcode) to the linker that is used on each sample.  
 
 Note that this barcode is different from "DNA barcoding", the latter of which generally refers to the use of a small variable genomic region (such as the COI gene for animals) for species and population identification.
 
-A first step in our analysis pipeline is to organize data from each of our samples that were run together on an Illumina lane (De-multiplexing our data) and also to filter our data and trim off bits that have lots of errors or that have sequences from the laboratory procedures that were used to generate the data (Trimming/Quality control; next section).  
+A first step in our analysis pipeline is to organize data from each of our samples that were run together on an Illumina lane (De-multiplexing our data) and also to filter our data and trim off bits that have lots of errors or that have sequences from the laboratory procedures that were used to generate the data (Trimming/Quality control).  
 
-When samples are run on an Illumina machine, DNA is broken up into many small fragments and a small bit of DNA called an adaptor is then added on each of the fragments. This adaptor allows the sequencing process to occur, essentially by making possible high-throughput put polymerase chain reaction (ask Ben about this if you are unfamiliar). To make possible the multiplexing of samples on one Illumina lane, each sample is linked to a unique adaptor that contains a "barcode" sequence that allows us to sort out which samples each sequence came from.  For our dataset, we have nine individuals from one species (the Tonkean macaque). Each of the samples received the following barcodes:
+When samples are run on an Illumina machine, DNA is broken up into many small fragments and a small bit of DNA called an adaptor is then added on each of the fragments. This adaptor allows the sequencing process to occur, essentially by making possible high-throughput primer extension with fluorescent terminator nucleotides (ask Ben about this if you are unfamiliar). To make possible the multiplexing of samples on one Illumina lane, each sample is linked to a unique adaptor that contains a "barcode" sequence that allows us to sort out which samples each sequence came from.  For our dataset, we have nine individuals from one species (the Tonkean macaque). Each of the samples received the following barcodes:
 
 ```
 CCTCTTATCA
@@ -111,6 +80,32 @@ CACGCAACGA	PM592
 ATCCGTCTAC	PM602
 ```
 We will use this information in a moment to de-multiplex our data. Please use your favourite text editor to generate a file in your home directory (`/2/scratch/ZZZ/`) called `monkey.barcodes` and paste in only the barcode sequences (without the sample names). 
+
+
+## Trimming and Quality Control of NextGen Data
+
+We have already discussed [fastq](http://en.wikipedia.org/wiki/FASTQ_format) format, quality assessment with [FastQC](http://www.bioinformatics.babraham.ac.uk/projects/fastqc/) and trimming with [TROMMOMATIC](http://www.usadellab.org/cms/?page=trimmomatic). So I won't go over this again.
+
+In the interest of time, I have demultiplexed the sample data. I used 
+
+
+## Set up a directory on scratch and make symbolic links
+
+Please login to info, connect to info115 (rsh info115) and navigate to the scratch directory as follows:
+
+`cd /2/scratch/ZZZZ`, where `ZZZ` is your username (e.g. `gradstd13`).
+
+Make a directory to work in, and enter that directory:
+```
+mkdir monkey_directory; cd monkey_directory
+```
+
+Next, please make a symbolic link to a subsetted dataset (`ln -s /1/scratch/monkey_data2/forward_subset.fastq`) and to the full dataset (`ln -s /1/scratch/monkey_data2/forward.fastq`)
+
+OK, now we have the data set up for us to work with.
+
+
+
 
 ## Quality control and trimming
 
