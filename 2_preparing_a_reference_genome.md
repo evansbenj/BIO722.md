@@ -36,13 +36,13 @@ I put the individual chromosomes in this directory:
 
 Now check out what is in this directory by typing this:
 
-`ls /1/scratch/ben/rhesus_chromosomes/`
+`ls /2/scratch/Bio722_BJE/rhesus_chromosomes`
 
 Ben will assign you a chromosome to work with.  From the `/2/scratch/YOUR_USERNAME/` directory, please make a symbolic link to this chromosome reference sequence in a new directory that you make like this:
 
-`mkdir my_monkey_chromosome`
+`mkdir my_monkey_chromosome; cd my_monkey_chromosome`
 
-`ln -s /1/scratch/ben/rhesus_chromosomes/chr`ZZZ`.fa my_monkey_chromosome/` 
+`ln -s /2/scratch/Bio722_BJE/rhesus_chromosomes/chr`ZZZ`.fa .` 
 
 Here and henceforth, you will need to change the `chrZZZ.fa` part to match whatever chromosome Ben assigned to you.  For example, if you are working on chromosome 9, you should type this:
 
