@@ -1,6 +1,6 @@
 # BJE Lecture 1
 
-(Or you can go back to the Readme page [here](https://github.com/evansbenj/XXXX)).
+(Or you can go back to the Readme page [here](https://github.com/evansbenj/BIO722.md/blob/main/0_README.md)).
 
 ## A quick note about genetic samples
 
