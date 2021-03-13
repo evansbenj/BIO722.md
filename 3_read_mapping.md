@@ -1,9 +1,16 @@
 (Or you can go back to the page about preparing your reference genome [here](https://github.com/evansbenj/BIO722.md/blob/main/2_preparing_a_reference_genome.md).
 
 # Read mapping
+Please make a new directory within your `my_monkey_chromosome` directory called `my_bam_files` and enter that directory like this:
+```
+cd ..; mkdir my_bam_files; cd my_bam_files
+```
+
 The `mem` algorithm of bwa is a great way to map your reads.  You can do this as follows:
 
 `bwa mem -M -t 16 -r "@RG\tID:FLOWCELL1.LANE6\tSM:PF515\tPL:illumina" ../my_monkey_chromosome/chr2.fa demultiplexed_subsetted_fq/PF515.fastq.gz | samtools view -bSh - > PF515.bam`
+
+If this executed without error, you should have a new bam file in your directory.
 
 
 ## Practice Problem 4: Assessing coverage
