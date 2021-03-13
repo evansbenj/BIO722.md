@@ -177,3 +177,5 @@ How would your `grep` command differ for a `fasta` file compared to a `fastq` fi
 
 ## OK, now we are ready to prepare a reference genome.  Please click [here](https://github.com/evansbenj/BIO722.md/blob/main/2_preparing_a_reference_genome.md).
 
+
+
