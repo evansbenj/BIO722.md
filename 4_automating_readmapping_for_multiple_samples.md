@@ -29,7 +29,7 @@ PM602"
 for each_individual in $individuals
 do
     echo ${each_individual}
-    bwa mem -M -t 16 -r "@RG\tID:FLOWCELL1.LANE6\tSM:${each_individual}\tPL:illumina" ../my_monkey_chromosome/${chromosome}.fa demultiplexed_subsetted_fq/${each_individual}.fastq.gz | samtools view -bSh - > ${each_individual}_chrZZZ.bam
+    bwa mem -M -t 16 -r "@RG\tID:FLOWCELL1.LANE6\tSM:${each_individual}\tPL:illumina" ../my_monkey_chromosome/${chromosome}.fa ../demultiplexed_subsetted_fq/${each_individual}.fastq.gz | samtools view -bSh - > ${each_individual}_chrZZZ.bam
     samtools sort ${each_individual}_$chromosome.bam ${each_individual}_${chromosome}_sorted
     samtools index ${each_individual}_${chromosome}_sorted.bam
 done
