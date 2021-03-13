@@ -8,17 +8,25 @@ cd ..; mkdir my_bam_files; cd my_bam_files
 
 The `mem` algorithm of bwa is a great way to map your reads.  You can do this as follows:
 
-`bwa mem -M -t 16 -r "@RG\tID:FLOWCELL1.LANE6\tSM:PF515\tPL:illumina" ../my_monkey_chromosome/chr2.fa demultiplexed_subsetted_fq/PF515.fastq.gz | samtools view -bSh - > PF515.bam`
+`bwa mem -M -t 16 -r "@RG\tID:FLOWCELL1.LANE6\tSM:PF515\tPL:illumina" ../my_monkey_chromosome/chrZZZ.fa demultiplexed_subsetted_fq/PF515.fastq.gz | samtools view -bSh - > PF515_chrZZZ.bam`
 
-If this executed without error, you should have a new bam file in your directory.
+Where `_chrZZZ` should be replaced with whatever chr you are working with. If this executed without error, you should have a new bam file in your directory.
 
 `.bam` files are a compressed binary version of a SAM file, whose format is explained [here](https://samtools.github.io/hts-specs/SAMv1.pdf).
 
 You can check out the contents of a bam file like this:
 ```
-samtools view PF515.bam | more
+samtools view PF515_chrZZZ.bam | more
 ```
 
+We still need to sort and index the bam files. We can do this as follows:
+```
+samtools sort PF515_chrZZZ.bam PF515_chrZZZ_sorted
+```
+This generates a file called `PF515_chrZZZ_sorted.bam`.  You can index this file like this:
+```
+samtools index PF515_chrZZZ_sorted.bam
+```
 
 ## Practice Problem 4: Assessing coverage
 
