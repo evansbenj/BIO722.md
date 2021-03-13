@@ -18,11 +18,17 @@ I've done RADseq multiple times at [Floragenex](http://www.floragenex.com/), whi
 
 This website is written in a markup language called [Markdown](https://en.wikipedia.org/wiki/Markdown) and hosted by [Github](www.github.com).  I've found both of these tools to be easy to learn and very useful.
 
-# Introduction to Quality Control, De-multiplexing, and Trimming of Illumina Data
+# Major goals of this exercise
+* We will prepare a reference genome using the bwa index command
+* We will map a subsetted de-multiplexed dataset to individual chromosomes in this reference genome using bwa mem
+* We will call genotypes using samtools and bcftools
+* We will calculate some diversity statistics using vcftools
+
+# Quality Control, De-multiplexing, and Trimming of Illumina Data
 
 ## Fasta and Fastq format
 
-We have already discussed fastq format, quality assessment with fastqc and trimming with trimmomatic. So I won't go over this again.
+We have already discussed fastq format, quality assessment with [FastQC](http://www.bioinformatics.babraham.ac.uk/projects/fastqc/) and trimming with [TROMMOMATIC](http://www.usadellab.org/cms/?page=trimmomatic). So I won't go over this again.
 
 In case you missed it, more details about fastq format is available [here](http://en.wikipedia.org/wiki/FASTQ_format).  
 
@@ -55,7 +61,7 @@ In case you are interested, I made this using the unix `cat` and `awk` commands 
 
 `cat forward.fastq | awk 'NR >= 0  && NR <= 500000 { print }' > forward_subset.fastq`
 
-Here the `cat` command pipes the file called 'forward.fastq` to the `awk command. Then the `awk` command searches the number of records `NR` (i.e. the line numbers) from 0-500,000 and prints them to a file called `forward_subset.fastq`.  
+Here the `cat` command pipes the file called 'forward.fastq` to the `awk command. Then the `awk` command searches the number of records `NR` (i.e. the line numbers) from 0-500,000 and prints them to a file called `forward_subset.fastq`.  In this command it is important that the number of lines that you select be divisible by 4, otherwise you will end up with an incomplete fastq entry at the end of the file, which will cause issues.
 
 **FYI, as with most things, I did not figure this out myself, I found it on the internet somewhere.**
 
