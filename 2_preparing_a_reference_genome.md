@@ -46,7 +46,7 @@ Ben will assign you a chromosome to work with.  From the `/2/scratch/YOUR_USERNA
 
 Here and henceforth, you will need to change the `chrZZZ.fa` part to match whatever chromosome Ben assigned to you.  For example, if you are working on chromosome 9, you should type this:
 
-`ln -s /1/scratch/ben/rhesus_chromosomes/chr9.fa my_monkey_chromosome/` 
+`ln -s /1/scratch/ben/rhesus_chromosomes/chr9.fa .` 
 
 Before we map our data to this reference genome, we need to generate some files that will be used in the mapping process.  This can be done in three steps:
 
