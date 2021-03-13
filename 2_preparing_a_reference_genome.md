@@ -15,9 +15,24 @@ As an example, let's look at some information on the "completely" sequenced geno
 
 ## Preparing your reference genome
 
-Reference genomes for many sequences are available at multiple publicly available databases.  We can download the complete genome sequence for the rhesus macaque from the [USC genome browser](http://hgdownload.cse.ucsc.edu/downloads.html#rhesus).  I did this earlier because it takes a while.  The whole genome comes as a fasta-formatted file, and I split it up into individual fasta files corresponding with each of the chromosomes.  Symbolic links to these files are located in this directory:
+Reference genomes for many sequences are available at multiple publicly available databases.  We can download the complete genome sequence for the rhesus macaque from the [USC genome browser](http://hgdownload.cse.ucsc.edu/downloads.html#rhesus).  I did this earlier because it takes a while.  The whole genome comes as a fasta-formatted file with individual entries corresponding to individual chromosomes. 
+```
+/2/scratch/Bio722_BJE/rhesus_genome/macaque_masked_chromosomes_ym.fasta
+```
+You can check out this genome like this:
+```
+head /2/scratch/Bio722_BJE/rhesus_genome/macaque_masked_chromosomes_ym.fasta
+```
+I split it up into individual fasta files corresponding with each of the chromosomes. This is easy to do with samtools if you know the names in the header for each chromosome, e.g., for chr2:
+```
+samtools faidx /2/scratch/Bio722_BJE/rhesus_genome/macaque_masked_chromosomes_ym.fasta chr2 > chr2.fast
+```
 
-`/1/scratch/ben/rhesus_chromosomes/`
+I put the individual chromosomes in this directory:
+
+```
+/2/scratch/Bio722_BJE/rhesus_chromosomes
+```
 
 Now check out what is in this directory by typing this:
 
