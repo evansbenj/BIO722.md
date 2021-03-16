@@ -7,10 +7,10 @@ Now that we have our genotypes, there are lots of things we can do!  We don't ha
 
 This command outputs pairwise nucleotide diversity by site
 ```
-vcftools --gzvcf Example_chr19_macaque.vcf.gz --chr chr19 --site-pi --out chr19_analysis
+vcftools --gzvcf Example_chr19_macaque.vcf.gz --chr chr19 --window-pi 10000 --out chr19_analysis
 ```
 
 We can get an average of the diversity across all variable sites like this:
 ```
-cat chr19_analysis.sites.pi | awk '{sum+=$3} END { print "Average = ",sum/NR}'
+cat chr19_analysis.windowed.pi | awk '{sum+=$5} END { print "Average = ",sum/NR}'
 ```
