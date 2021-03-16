@@ -15,7 +15,7 @@ As an example, let's look at some information on the "completely" sequenced geno
 
 ## Preparing your reference genome
 
-Reference genomes for many sequences are available at multiple publicly available databases.  We can download the complete genome sequence for the rhesus macaque from the [USC genome browser](http://hgdownload.cse.ucsc.edu/downloads.html#rhesus).  I did this earlier because it takes a while.  The whole genome comes as a fasta-formatted file with individual entries corresponding to individual chromosomes. 
+Reference genomes for many sequences are available at multiple publicly available databases.  We can download the complete genome sequence for the rhesus macaque from the [USC genome browser](http://hgdownload.cse.ucsc.edu/downloads.html#rhesus).  I did this earlier because it takes a while.  The whole genome comes as a multifasta file with individual fasta entries corresponding to individual chromosomes. 
 ```
 /2/scratch/Bio722_BJE/rhesus_genome/macaque_masked_chromosomes_ym.fasta
 ```
