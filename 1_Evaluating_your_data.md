@@ -26,7 +26,7 @@ This website is written in a markup language called [Markdown](https://en.wikipe
 
 
 ## Example data
-The data we will be working with are single end 100 bp reads from one Illumina lane that was collected in 2014. The data are from 9 individuals that were barcoded and multiplexed on this lane (see below for more explanation). The path to the complete dataset is:
+The data we will be working with are single end 100 bp reads from one Illumina lane. The data are from 9 individual monkeys that were barcoded and multiplexed on this lane (see below for more explanation). The path to the complete dataset is:
 ```
 /home/ben/2021_BIO722/complete_data/forward.fastq
 ```
