@@ -21,7 +21,7 @@ samtools view -h PF515_chrZZZ.bam | more
 
 We still need to sort and index the bam files. We can do this as follows:
 ```
-samtools sort PF515_chrZZZ.bam PF515_chrZZZ_sorted
+samtools sort PF515_chrZZZ.bam -o PF515_chrZZZ_sorted.bam
 ```
 This generates a file called `PF515_chrZZZ_sorted.bam`.  You can index this file like this:
 ```
