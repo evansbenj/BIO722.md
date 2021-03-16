@@ -100,14 +100,18 @@ We have already discussed [fastq](http://en.wikipedia.org/wiki/FASTQ_format) for
 
 Please login to info, connect to info115 (rsh info115) and navigate to the scratch directory as follows:
 
-`cd /2/scratch/ZZZZ`, where `ZZZ` is your username (e.g. `gradstd13`).
+`cd /scratch/ZZZZ`, where `ZZZ` is your username (e.g. `gradstd13`).
 
 Make a directory to work in, and enter that directory:
 ```
 mkdir monkey_directory; cd monkey_directory
 ```
 
-Next, please make a symbolic link to a subsetted dataset (`ln -s /2/scratch/Bio722_BJE/demultiplexed_subsetted_fq/`).  This is a useful way to manage information and avoid duplicating files and using up Brian's disk space. You can check out the data like this:
+Next, please make a symbolic link to a subsetted dataset:
+```
+ln -s /scratch/Bio722_BJE/demultiplexed_subsetted_fq/`
+```
+This is a useful way to manage information and avoid duplicating files and using up Brian's disk space. You can check out the data like this:
 ```
 cd demultiplexed_subsetted_fq
 ```
