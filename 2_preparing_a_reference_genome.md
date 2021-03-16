@@ -48,13 +48,9 @@ Here and henceforth, you will need to change the `chrZZZ.fa` part to match whate
 
 `ln -s /1/scratch/ben/rhesus_chromosomes/chr9.fa .` 
 
-Before we map our data to this reference genome, we need to generate some files that will be used in the mapping process.  This can be done in three steps:
+Before we map our data to this reference genome, we need to generate an some files (1-3 below) that will be used in the mapping process.  
 
-1. Make an index file.   
-
-    The `bwa` command tells the computer to execute the bwa program.  The `index` command tells `bwa` to generate index files from the rhesus genome file that is indicated by the `my_monkey_chromosome/chr`ZZZ`.fa`. The `-a bwtsw` flag specifies the indexing algorithm for `bwa` to use.  
-  
-  This step will take a few minutes. If you are feeling adventurous (and I hope you are!), you can do this in a screen like this:
+1. `bwa` needs an index file to assist with read mapping. Conveniently, the `index` command tells `bwa` to generate index files from the rhesus genome file that is indicated by the `my_monkey_chromosome/chr`ZZZ`.fa`. This step will take a few minutes. If you are feeling adventurous (and I hope you are!), you can do this in a screen like this:
   
   `screen -S make_an_index_file`
   
@@ -82,13 +78,13 @@ Or you can exist a screen while attached by typing `ctrl-a` and then typing `:qu
 
 
 
-2. Some software need an `fai` file that can be generated using `samtools`.  Please type this:
+2. Some software such as the Genome Analyssis toolkit (GATK) need an `fai` file that can be generated using `samtools`.  Please type this:
 
   `samtools faidx chr`ZZZ`.fa`
 
-  Here, the `samtools` command tells the computer to execute the `samtools` program.  The `faidx` option tells samtools to generate a file called `chr`ZZZ`.fai` in which each line has information for one the contigs within the reference genome, including the contig name, size, location and other information.  Our reference genome has a contig for each chromosome.
+  Here, the `samtools` command tells the computer to execute the `samtools` program.  The `faidx` option tells samtools to generate a file called `chr`ZZZ`.fai` in which each line has information for one the contigs within the reference genome, including the contig name, size, location and other information.  
 
-3.  If you are going to use GATK for genotyping (which we are not), you will also need a `.dict` file, which can be generated with a program called [`picard`](http://broadinstitute.github.io/picard/).  To do this, we need to use the latest version of java.  Please type this command to make a symbolic link to this version:
+3.  If you were going to use GATK for genotyping (which we are not), you would also need a `.dict` file, which can be generated with a program called [`picard`](http://broadinstitute.github.io/picard/).  To do this, we need to use the latest version of java.  Please type this command to make a symbolic link to this version:
 
 `ln -s /home/ben/jre1.8.0_111/bin/java`
 
