@@ -13,7 +13,7 @@ Now lets make a vcf file from our bam files. We have everything we need to make 
 Please start a screen and type this command:
 
 ```
-bcftools mpileup -Ou -f ../my_monkey_chromosome/chr2.fa PF515_chr2_sorted.bam PM561_chr2_sorted.bam PM565_chr2_sorted.bam PM566_chr2_sorted.bam PM567_chr2_sorted.bam PM582_chr2_sorted.bam PM584_chr2_sorted.bam PM592_chr2_sorted.bam PM602_chr2_sorted.bam | bcftools call -mv -Oz -o allsamples_chr9_merged_sorted.bam.vcf.gz
+bcftools mpileup -Ou -f ../my_monkey_chromosome/chrZZZ.fa PF515_chrZZZ_sorted.bam PM561_chrZZZ_sorted.bam PM565_chrZZZ_sorted.bam PM566_chrZZZ_sorted.bam PM567_chrZZZ_sorted.bam PM582_chrZZZ_sorted.bam PM584_chrZZZ_sorted.bam PM592_chrZZZ_sorted.bam PM602_chrZZZ_sorted.bam | bcftools call -mv -Oz -o allsamples_chrZZZ_merged_sorted.bam.vcf.gz
 
 ```
 This will take a while so please exit the screen by typing `ctrl-a` and `ctrl-d`
