@@ -42,6 +42,10 @@ Here, as previously, the vertical bar `|` is a "pipe" that sends the information
 
 ## Practice Problem 3 (for home)
 
-Using the idxstats options of [samtools](http://www.htslib.org/doc/samtools-0.1.19.html) please check how many reads mapped to your chromosome for your mapped data and how many failed to map.  Do you know why so many failed to map?
+Using the idxstats options of [samtools](http://www.htslib.org/doc/samtools-0.1.19.html) please check how many reads mapped to your chromosome for your mapped data and how many failed to map.  
+
+According to the [help page](http://www.htslib.org/doc/samtools-idxstats.html): "The output is TAB-delimited with each line consisting of reference sequence name, sequence length, # mapped read-segments and # unmapped read-segments. It is written to stdout. Note this may count reads multiple times if they are mapped more than once or in multiple fragments."
+
+Do you know why so many failed to map?
 
 ## OK, if this all went smoothly we are now ready to automate the alignments with a bash script.  Please click [here](https://github.com/evansbenj/BIO722.md/blob/main/4_automating_readmapping_for_multiple_samples.md) to go to the next page.
