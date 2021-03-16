@@ -6,13 +6,13 @@ Please make a new directory within your `my_monkey_chromosome` directory called 
 cd ..; mkdir my_bam_files; cd my_bam_files
 ```
 
-The `mem` algorithm of bwa is a great way to map your reads.  You can do this as follows:
+The `mem` algorithm of bwa is a great way to map your reads.  You can do this for the reads from one individual (PF515) as follows:
 
 `bwa mem -M -t 16 -r "@RG\tID:FLOWCELL1.LANE6\tSM:PF515\tPL:illumina" ../my_monkey_chromosome/chrZZZ.fa ../demultiplexed_subsetted_fq/PF515.fastq.gz | samtools view -bSh - > PF515_chrZZZ.bam`
 
 Where `_chrZZZ` should be replaced with whatever chr you are working with. If this executed without error, you should have a new bam file in your directory.
 
-`.bam` files are a compressed binary version of a SAM file, whose format is explained [here](https://samtools.github.io/hts-specs/SAMv1.pdf).
+`.bam` files are a compressed binary version of a SAM file, whose format is explained [here](https://samtools.github.io/hts-specs/SAMv1.pdf).  The bit after the `-r` flag is called a read group.  This is required by GATK and is used for base recalibration, which we will discuss if time permits.
 
 You can check out the contents of a bam file like this:
 ```
