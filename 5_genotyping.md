@@ -25,14 +25,19 @@ This should finish quickly because we are working with small subsets of the data
 In the meantime, we can check out a file I made earlier.  Please make a symbolic link to this file like this:
 
 ```
-ln -s /1/scratch/ben/allsamples_chr9_merged_sorted.bam.vcf.gz
+ln -s /home/ben/2021_BIO722/Example_chr19_macaque.vcf.gz
 ```
 
 And now check out this file like this:
 
 ```
-zmore allsamples_chr9_merged_sorted.bam.vcf.gz
+zmore Example_chr19_macaque.vcf.gz
 
 ```
 
 Here you need to use `zmore` instead of `more` because the file is compressed (gzipped).
+
+You can also check the header and the first few lines like this:
+```
+zcat Example_chr19_macaque.vcf.gz | grep '#CHR' -A 3 
+```
