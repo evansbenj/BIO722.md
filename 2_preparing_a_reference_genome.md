@@ -17,38 +17,38 @@ As an example, let's look at some information on the "completely" sequenced geno
 
 Reference genomes for many sequences are available at multiple publicly available databases.  We can download the complete genome sequence for the rhesus macaque from the [USC genome browser](http://hgdownload.cse.ucsc.edu/downloads.html#rhesus).  I did this earlier because it takes a while.  The whole genome comes as a multifasta file with individual fasta entries corresponding to individual chromosomes. 
 ```
-/2/scratch/Bio722_BJE/rhesus_genome/macaque_masked_chromosomes_ym.fasta
+/scratch/Bio722_BJE/rhesus_genome/macaque_masked_chromosomes_ym.fasta
 ```
 You can check out this genome like this:
 ```
-head /2/scratch/Bio722_BJE/rhesus_genome/macaque_masked_chromosomes_ym.fasta
+head /scratch/Bio722_BJE/rhesus_genome/macaque_masked_chromosomes_ym.fasta
 ```
 I split it up into individual fasta files corresponding with each of the chromosomes. This is easy to do with samtools if you know the names in the header for each chromosome, e.g., for chr2:
 ```
-samtools faidx /2/scratch/Bio722_BJE/rhesus_genome/macaque_masked_chromosomes_ym.fasta chr2 > chr2.fast
+samtools faidx /scratch/Bio722_BJE/rhesus_genome/macaque_masked_chromosomes_ym.fasta chr2 > chr2.fast
 ```
 
 I put the individual chromosomes in this directory:
 
 ```
-/2/scratch/Bio722_BJE/rhesus_chromosomes
+/scratch/Bio722_BJE/rhesus_chromosomes
 ```
 
 Now check out what is in this directory by typing this:
 
-`ls /2/scratch/Bio722_BJE/rhesus_chromosomes`
+`ls /scratch/Bio722_BJE/rhesus_chromosomes`
 
-Ben will assign you a chromosome to work with.  From the `/2/scratch/YOUR_USERNAME/monkey_directory/` directory, please make a symbolic link to this chromosome reference sequence in a new directory that you make like this:
+Ben will assign you a chromosome to work with.  From the `/scratch/YOUR_USERNAME/monkey_directory/` directory, please make a symbolic link to this chromosome reference sequence in a new directory that you make like this:
 
 `mkdir my_monkey_chromosome; cd my_monkey_chromosome`
 
-`ln -s /2/scratch/Bio722_BJE/rhesus_chromosomes/chr`ZZZ`.fa .` 
+`ln -s /scratch/Bio722_BJE/rhesus_chromosomes/chr`ZZZ`.fa .` 
 
 Here and henceforth, you will need to change the `chrZZZ.fa` part to match whatever chromosome Ben assigned to you.  For example, if you are working on chromosome 9, you should type this:
 
-`ln -s /1/scratch/ben/rhesus_chromosomes/chr9.fa .` 
+`ln -s /scratch/USERNAME/rhesus_chromosomes/chr9.fa .` 
 
-Before we map our data to this reference genome, we need to generate an some files (1-3 below) that will be used in the mapping process.  
+Where `USERNAME` is your username. Before we map our data to this reference genome, we need to generate an some files (1-3 below) that will be used in the mapping process.  
 
 1. `bwa` needs an index file to assist with read mapping. Conveniently, the `index` command tells `bwa` to generate index files from the rhesus genome file that is indicated by the `my_monkey_chromosome/chr`ZZZ`.fa`. This step will take a few minutes. If you are feeling adventurous (and I hope you are!), you can do this in a screen like this:
   
