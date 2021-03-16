@@ -25,7 +25,7 @@ This should finish quickly because we are working with small subsets of the data
 In the meantime, we can check out a file I made earlier.  Please make a symbolic link to this file like this:
 
 ```
-ln -s /home/ben/2021_BIO722/Example_chr19_macaque.vcf.gz
+ln -s /scratch/Bio722_BJE/Example_chr19_macaque.vcf.gz
 ```
 
 And now check out this file like this:
