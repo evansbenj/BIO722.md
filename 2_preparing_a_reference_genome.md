@@ -46,9 +46,9 @@ Ben will assign you a chromosome to work with.  From the `/scratch/YOUR_USERNAME
 
 Here and henceforth, you will need to change the `chrZZZ.fa` part to match whatever chromosome Ben assigned to you.  For example, if you are working on chromosome 9, you should type this:
 
-`ln -s /scratch/USERNAME/rhesus_chromosomes/chr9.fa .` 
+`ln -s /scratch/Bio722_BJE/rhesus_chromosomes/chr9.fa .` 
 
-Where `USERNAME` is your username. Before we map our data to this reference genome, we need to generate an some files (1-3 below) that will be used in the mapping process.  
+Before we map our data to this reference genome, we need to generate an some files (1-3 below) that will be used in the mapping process.  
 
 1. `bwa` needs an index file to assist with read mapping. Conveniently, the `index` command tells `bwa` to generate index files from the rhesus genome file that is indicated by the `my_monkey_chromosome/chr`ZZZ`.fa`. This step will take a few minutes. If you are feeling adventurous (and I hope you are!), you can do this in a screen like this:
   
