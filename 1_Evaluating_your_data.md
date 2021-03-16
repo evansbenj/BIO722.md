@@ -93,7 +93,7 @@ For those of you that are curious, I have copied below [More Details On Demultip
 
 ## Trimming and Quality Control of NextGen Data
 
-We have already discussed [fastq](http://en.wikipedia.org/wiki/FASTQ_format) format, quality assessment with [FastQC](http://www.bioinformatics.babraham.ac.uk/projects/fastqc/) and trimming with [TROMMOMATIC](http://www.usadellab.org/cms/?page=trimmomatic). So I won't go over this again.
+We have already discussed [fastq](http://en.wikipedia.org/wiki/FASTQ_format) format, quality assessment with [FastQC](http://www.bioinformatics.babraham.ac.uk/projects/fastqc/) and trimming with [trimmomatic](http://www.usadellab.org/cms/?page=trimmomatic). So I won't go over this again. Let's just assume that we have done these steps and now have the trimmed, high quality reads.
 
 
 ## Set up a directory on scratch and make symbolic links
