@@ -1,4 +1,9 @@
+(Or you can go back to the page about preparing your reference genome [here](https://github.com/evansbenj/BIO722.md/blob/main/3_read_mapping.md).
+
+
 # Passing variables into a bash script
+
+A good way to keep track of commands you perform is to do everything in scripts.  I often use bash for this, and pass in variables of interest, so I can run the same script on different samples, different reference genomes, etc.  As an example, please make a file called "test.sh" with the content below.
 
 ```
 #!/bin/bash                                                                                             
@@ -8,8 +13,18 @@ echo ${2}
 echo ${1}
 ```
 
+Now make this script executable like this:
+```
+chmod 755 test.sh
+```
 
-(Or you can go back to the page about preparing your reference genome [here](https://github.com/evansbenj/BIO722.md/blob/main/3_read_mapping.md).
+And now execute it, and pass it two variables, like this:
+```
+./test.sh there hello
+```
+
+Hopefully you can see that the two space-delimited variables were assigned variable names (${1} and ${2}) that were used in the bash commands.
+
 
 # Automating readmapping for multiple samples with a bash script
 
