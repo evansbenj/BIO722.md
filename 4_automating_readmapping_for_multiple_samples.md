@@ -11,9 +11,8 @@ I have set the `$chromosome` variable to take a argument `${1}` that we will pas
 
 ```
 #!/bin/bash                                                                                            
-
-path_to_data="/scratch/USERNAME/monkey_directory/demultiplexed_subsetted_fq/"
-path_to_chromosome="/scratch/USERNAME/monkey_directory/my_monkey_chromosome/"
+path_to_data="/scratch/USERNAME/monkey_directory/demultiplexed_subsetted_fq"
+path_to_chromosome="/scratch/USERNAME/monkey_directory/my_monkey_chromosome"
 chromosome=${1}
 
 individuals="PF515                                                                                     
@@ -28,21 +27,19 @@ PM602"
 
 for each_individual in $individuals
 do
-    # echo which individual we are on
+    # echo which individual we are on                                                                   
     echo ${each_individual}
 
-    # align the data to the reference gemome
-    bwa mem -t 16 -R "@RG\tID:FLOWCELL1.LANE6\tSM:${each_individual}\tPL:illumina" ../my_monkey_chromosome/${
-chromosome}.fa ../demultiplexed_subsetted_fq/${each_individual}.fastq.gz | samtools view -bSh - > ${each_indi
-vidual}_${chromosome}.bam
+    # align the data to the reference gemome                                                            
+    bwa mem -t 16 -R "@RG\tID:FLOWCELL1.LANE6\tSM:${each_individual}\tPL:illumina" ${path_to_chromosome}/${chromosome}.fa ${path_to_data}/${each_individual}.fastq.gz | samtools view -bSh - > ${each_individual}_${chromosome}.bam
 
-    # sort the bam file
+    # sort the bam file                                                                                 
     samtools sort ${each_individual}_$chromosome.bam -o ${each_individual}_${chromosome}_sorted.bam
-    
-    # index the sorted bam file
+
+    # index the sorted bam file                                                                         
     samtools index ${each_individual}_${chromosome}_sorted.bam
-    
-    # clean up unsorted file
+
+    # clean up unsorted file                                                                            
     rm ${each_individual}_${chromosome}.bam
 done
 
