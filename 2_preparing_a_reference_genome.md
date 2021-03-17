@@ -38,7 +38,12 @@ Now check out what is in this directory by typing this:
 
 `ls /2/scratch/Bio722_BJE/rhesus_chromosomes`
 
-Ben will assign you a chromosome to work with.  From the `/scratch/YOUR_USERNAME/monkey_directory/` directory, please make a symbolic link to this chromosome reference sequence in a new directory that you make like this:
+Ben will assign you a chromosome to work with.  First go to the `/scratch/YOUR_USERNAME/monkey_directory/` directory:
+```
+cd /scratch/YOUR_USERNAME/monkey_directory/
+```
+
+Now, please make a symbolic link to this chromosome reference sequence in a new directory that you make like this:
 
 `mkdir my_monkey_chromosome; cd my_monkey_chromosome`
 
