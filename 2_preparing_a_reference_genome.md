@@ -17,21 +17,21 @@ As an example, let's look at some information on the "completely" sequenced geno
 
 Reference genomes for many sequences are available at multiple publicly available databases.  We can download the complete genome sequence for the rhesus macaque from the [USC genome browser](http://hgdownload.cse.ucsc.edu/downloads.html#rhesus).  I did this earlier because it takes a while.  The whole genome comes as a multifasta file with individual fasta entries corresponding to individual chromosomes. 
 ```
-/scratch/Bio722_BJE/rhesus_genome/macaque_masked_chromosomes_ym.fasta
+/2/scratch/Bio722_BJE/rhesus_genome/macaque_masked_chromosomes_ym.fasta
 ```
 You can check out this genome like this:
 ```
-head /scratch/Bio722_BJE/rhesus_genome/macaque_masked_chromosomes_ym.fasta
+head /2/scratch/Bio722_BJE/rhesus_genome/macaque_masked_chromosomes_ym.fasta
 ```
 I split it up into individual fasta files corresponding with each of the chromosomes. This is easy to do with samtools if you know the names in the header for each chromosome, e.g., for chr2:
 ```
-samtools faidx /scratch/Bio722_BJE/rhesus_genome/macaque_masked_chromosomes_ym.fasta chr2 > chr2.fast
+samtools faidx /2/scratch/Bio722_BJE/rhesus_genome/macaque_masked_chromosomes_ym.fasta chr2 > chr2.fast
 ```
 
 I put the individual chromosomes in this directory:
 
 ```
-/scratch/Bio722_BJE/rhesus_chromosomes
+/2/scratch/Bio722_BJE/rhesus_chromosomes
 ```
 
 Now check out what is in this directory by typing this:
@@ -42,11 +42,11 @@ Ben will assign you a chromosome to work with.  From the `/scratch/YOUR_USERNAME
 
 `mkdir my_monkey_chromosome; cd my_monkey_chromosome`
 
-`ln -s /scratch/Bio722_BJE/rhesus_chromosomes/chr`ZZZ`.fa .` 
+`ln -s /2/scratch/Bio722_BJE/rhesus_chromosomes/chr`ZZZ`.fa .` 
 
 Here and henceforth, you will need to change the `chrZZZ.fa` part to match whatever chromosome Ben assigned to you.  For example, if you are working on chromosome 9, you should type this:
 
-`ln -s /scratch/Bio722_BJE/rhesus_chromosomes/chr9.fa .` 
+`ln -s /2/scratch/Bio722_BJE/rhesus_chromosomes/chr9.fa .` 
 
 Before we map our data to this reference genome, we need to generate an some files (1-3 below) that will be used in the mapping process.  
 
