@@ -18,3 +18,8 @@ cat chr1_analysis.windowed.pi | awk '{sum+=$5} END { print "Average = ",sum/NR}'
 cat chr2_analysis.windowed.pi | awk '{sum+=$5} END { print "Average = ",sum/NR}'
 cat chrX_analysis.windowed.pi | awk '{sum+=$5} END { print "Average = ",sum/NR}'
 ```
+
+We can calculate the ratio of nucleotide diversity on the X versus the average on the autosomes (with lots of caveats) like this:
+```
+perl -E "say 3.58237/((4.67155+4.25618)/2)"
+```
