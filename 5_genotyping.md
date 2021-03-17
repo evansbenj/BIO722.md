@@ -18,11 +18,11 @@ bcftools mpileup -Ou -f ../my_monkey_chromosome/chrZZZ.fa PF515_chrZZZ_sorted.ba
 ```
 This will take a while so please exit the screen by typing `ctrl-a` and `ctrl-d`
 
-The control above first uses the bcftools mpileup command. You can check out what the options are by typing `bcftoos` and `bcftools mpileup`. You will see that the `mpileup` command generates genotype likelihoods from multiple `.bam` files. The `bcftools call` does SNP and indel genotype calling.  The `-Ou` and `-Oz` command asks `bcftools` generate uncompressed BCF output and a compressed vcf output respectively.
+The control above first uses the bcftools mpileup command. You can check out what the options are by typing `bcftools` and `bcftools mpileup`. You will see that the `mpileup` command generates genotype likelihoods from multiple `.bam` files. The `bcftools call` does SNP and indel genotype calling.  The `-Ou` and `-Oz` command asks `bcftools` generate uncompressed BCF output and a compressed vcf output respectively.
 
 This should finish quickly because we are working with small subsets of the data. 
 
-In the meantime, we can check out a file I made earlier.  Please make a symbolic link to this file like this:
+Because we are working with such a small (subsetted) dataset, your bam files have only very few reads that mapped to your chromosome and they are at very low depth. At this point, let's work with files I made earlier using the complete dataset.  Please make a symbolic link to this file like this:
 
 ```
 ln -s /scratch/Bio722_BJE/Example_chr19_macaque.vcf.gz
