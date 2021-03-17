@@ -25,9 +25,9 @@ This should finish quickly because we are working with small subsets of the data
 Because we are working with such a small (subsetted) dataset, your bam files have only very few reads that mapped to your chromosome and they are at very low depth. At this point, let's work with files I made earlier using the complete dataset.  Please make a symbolic link to thes files like this:
 
 ```
-ln -s /scratch/Bio722_BJE/chr1_only.recode.vcf.gz
-ln -s /scratch/Bio722_BJE/chr2_only.recode.vcf.gz
-ln -s /scratch/Bio722_BJE/chrX_only.recode.vcf.gz
+ln -s /2/scratch/Bio722_BJE/chr1_only.recode.vcf.gz
+ln -s /2/scratch/Bio722_BJE/chr2_only.recode.vcf.gz
+ln -s /2/scratch/Bio722_BJE/chrX_only.recode.vcf.gz
 ```
 
 And now check out this file like this:
