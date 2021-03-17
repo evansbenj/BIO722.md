@@ -36,17 +36,7 @@ Please use the `ls -lh` command to find out how large the complete dataset is:
 ls -lh /2/scratch/Bio722_BJE/forward.fastq.gz
 ```
 
-Here the `l` flag asks the list (`ls`) command to provide the *l*ong format that has the file size. The `h` flag asks it to list the file size in a *h*uman readable way (using acronyms for bits). As you (hopefully) can see, the compressed file is fairly large (~11 Gb). The uncompressed file is ~3 times larger. Because the tasks we will perform take a while with this much data, I made a smaller dataset (31Mb) to work with here:
-
-`ls -lh /home/ben/2021_BIO722/complete_data/forward.fastq.gz`
-
-In case you are interested, I made this using the unix `zcat` and `awk` commands as follows:
-
-`zcat forward.fastq | awk 'NR >= 0  && NR <= 500000 { print }' > forward_subset.fastq`
-
-Here the `zcat` command sends each line of 'forward.fastq.gz` to the `awk command. Then the `awk` command searches the number of records `NR` (i.e. the line numbers) from 0-500,000 and prints them to a file called `forward_subset.fastq`.  In this command it is important that the number of lines that you select be divisible by 4, otherwise you will end up with an incomplete fastq entry at the end of the file, which will cause issues.
-
-**FYI, as with most things, I did not figure this out myself, I found it on the internet somewhere.**
+Here the `l` flag asks the list (`ls`) command to provide the *l*ong format that has the file size. The `h` flag asks it to list the file size in a *h*uman readable way (using acronyms for bits). As you (hopefully) can see, the compressed file is fairly large (~11 Gb). The uncompressed file is ~3 times larger. 
 
 ## De-Multiplexing
 Most RRGS methods rely on the "short" (101-251 bp) read sequencing platform.  These machines generate data using something called a "flowcell" that is divided up into eight "lanes". Small scale projects typically would run multiple samples (from different species or different individuals within a species) on one lane. Because the sequence methodology requires the ligation (attachment) of a linker (a bit of DNA) to each side of bits of DNA that will be sequenced, it is straightforward to combine multiple samples (multiplex) from different individuals in a single lane. This is done by adding a unique identifier sequence (a barcode) to the linker that is used on each sample.  
