@@ -99,7 +99,7 @@ mkdir monkey_directory; cd monkey_directory
 
 Next, please make a symbolic link to a subsetted dataset:
 ```
-ln -s /scratch/Bio722_BJE/demultiplexed_subsetted_fq/
+ln -s /2/scratch/Bio722_BJE/demultiplexed_subsetted_fq/
 ```
 This is a useful way to manage information and avoid duplicating files and using up Brian's disk space. You can check out the data like this:
 ```
