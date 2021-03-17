@@ -45,5 +45,11 @@ zcat chr1_only.recode.vcf.gz | grep '#CHR' -A 3
 ```
 This will give you the main comment line (which always begins with #CHR in vcf files) plus 3 lines of data that follow (-A 3).
 
+# Vcf format
+
+The format of the vcf file is explained [here](https://samtools.github.io/hts-specs/VCFv4.2.pdf).  This is a widely used genotyping format that can be uses as input for many softwares (e.g. the R package [PopGenome](https://cran.r-project.org/web/packages/PopGenome/PopGenome.pdf)) or exported to other formats (e.g. using [PLINK](http://zzz.bwh.harvard.edu/plink/)).
+
+OK, now let's calculate some summary statistics from these files.  Please click [here](https://github.com/evansbenj/BIO722.md/blob/main/6_summary_statistics.md)
+
 
 
