@@ -1,3 +1,6 @@
+
+Or you can go back to where we left off last time [here](https://github.com/evansbenj/BIO722.md/blob/main/4_automating_readmapping_for_multiple_samples.md)
+
 # Goals
 
 The pipeline we ran through last time took you from raw next gen data to a sorted bam file for each sample. Before we genotype these data, we need to do two more steps:
@@ -154,4 +157,4 @@ foreach(@files){
 
 
 
-## OK now we are ready to combine our bam files and do some genotyping. Please click [here](https://github.com/evansbenj/BIO722.md/blob/main/5_genotyping.md)
+## OK now we are ready to combine our bam files and do some genotyping. Please click [here](https://github.com/evansbenj/BIO722.md/blob/main/6_genotyping.md)
