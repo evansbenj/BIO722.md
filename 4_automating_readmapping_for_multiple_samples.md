@@ -95,6 +95,5 @@ You should see lots of file including, for each sample a `_sorted.bam` file that
 
 Please try out combining some of the tricks that Brian told you about last class to modify the bash script to run the commands without listing the file names in the script.
 
-
-## OK now we are ready to combine our bam files and do some genotyping. Please click [here](https://github.com/evansbenj/BIO722.md/blob/main/5_genotyping.md)
+## OK now we are ready to do a few more quality control steps before genotyping. Please click [here](https://github.com/evansbenj/BIO722.md/blob/main/4.5_deduping.md)
 
