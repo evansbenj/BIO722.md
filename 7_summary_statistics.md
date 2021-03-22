@@ -1,4 +1,4 @@
-(Or you can go back to automating the readmap alignment for multiple samples [here](https://github.com/evansbenj/BIO722.md/blob/main/5_genotyping.md).
+(Or you can go back to automating the readmap alignment for multiple samples [here](https://github.com/evansbenj/BIO722.md/blob/main/6_genotyping.md).
 
 
 # Summary statistics
