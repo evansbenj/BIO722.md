@@ -6,6 +6,13 @@ It is often the case, despite our efforts to generate high quality genotype call
 
 What we will do, and what is widely done before analysis, is filter our vcf files to get rid of low quality genotypes.  There are many programs that can do this, including [vcftools](http://vcftools.sourceforge.net/man_latest.html), [bcftools](http://samtools.github.io/bcftools/bcftools.html), and [GATK](https://gatk.broadinstitute.org/hc/en-us).  Probably the most sophisticated approach is to use GATK's variant quality score recalibration (`VQSR`) which uses a model-based approach to assess quality scores and filter genotypes based on multi-dimensional criteria. This generally requires a large (>30 individuals) sample side and some fairly strong assumptions (e.g. a set of known variants). Instead, today, we will implement a hard-cutoff filter, also using GATK.
 
+In order to work with vcf files, `GATK` needs us to index them first.  Please do this with `tabix`:
+```
+tabix -p vcf chr1_only.recode.vcf.gz
+tabix -p vcf chr2_only.recode.vcf.gz
+tabix -p vcf chrX_only.recode.vcf.gz
+```
+This creates a `.tbi` file for each of our vcf files.
 
 Here's an example of a script that can do these steps.  Please copy this and make an executeable file and execute it on the subset data we have been working with. You could name it `Step_4_flag_and_filter.pl`.
 
