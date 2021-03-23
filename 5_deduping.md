@@ -72,7 +72,7 @@ my $reference_genome=$ARGV[0].".fa";
 my @files;
 my $status;
    
-@files = glob("*".$reference_genome."_sorted.bam");
+@files = glob("*".$ARGV[0]."_sorted.bam");
 
 my $commandline = "java -Xmx1G -jar /usr/local/gatk/GenomeAnalysisTK.jar -T RealignerTargetCreator ";
 
@@ -80,7 +80,7 @@ foreach(@files){
     $commandline = $commandline." -I ".$_." ";
 }
 
-$commandline = $commandline."-R ".$path_to_reference_genome.$ARGV[0]." -o forIndelRealigner.intervals";
+$commandline = $commandline."-R ".$path_to_reference_genome.$reference_genome." -o forIndelRealigner.intervals";
 
 $status = system($commandline);
 ```
