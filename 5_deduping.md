@@ -14,7 +14,7 @@ After that, we will:
 * Filter genotypes
 * Calculate summary statistics
 
-# Realigning indels
+# Realigning indels part 1: Identifying the indels
 
 If you didn't manage to make it to the point we left off, please make a folder in your `/2/scratch/USERNAME` directory called `monkey_directory` and enter that directory like this:
 ```
@@ -85,9 +85,12 @@ $commandline = $commandline."-R ".$path_to_reference_genome.$reference_genome." 
 $status = system($commandline);
 ```
 
-Please copy and paste this script, change the permissions to allow it to be executable, and execute it on your samples from within the directory that contains your sorted bam files. I suggest naming your scripts using a sensible system, such as with descriptions and numbers in ascending order.  For example, you could name this script `Step_1_execute_GATK_RealignerTargetCreator.pl`. You will need to adjust the `$reference_genome` variable to match your chromosome.
+Please copy and paste this script into a new file, edit the path so that the `USERNAME` is your username, change the permissions to allow it to be executable (`chmod 755 your_file.pl`), and execute it on your samples from within the directory that contains your sorted bam files. I suggest naming your scripts using a sensible system, such as with descriptions and numbers in ascending order.  For example, you could name this script `Step_1_execute_GATK_RealignerTargetCreator.pl`. This script takes as input the name of your reference chromosome (e.g., `chr9`) so you can execute the script like this:
+```
+./Step_1_execute_GATK_RealignerTargetCreator.pl chrZZZ
+```
 
-In this script the `@files = glob("*_sorted.bam");` command uses the `glob` function to look for all files in your directory with that end with "_sorted.bam" and then it adds them to an array called `@files`. The `$status = system($commandline);` line executes the test stored in the `$commandline` variable. The commandline executes the java `.jar` file and allocates a maximum of 1 Gb of memory for the Java virtual machine (`-Xmx1G`).
+In this script the `@files = glob("*_sorted.bam");` command uses the `glob` function to look for all files in your directory with that end with `chrZZZ_sorted.bam` and then it adds them to an array called `@files`. The commandline considers all of these `.bam` files together, so there is a loop to add each one to the commandline. The `$status = system($commandline);` line executes the test stored in the `$commandline` variable. The commandline executes the java `.jar` file and allocates a maximum of 1 Gb of memory for the Java virtual machine (`-Xmx1G`).
 
 When it is done, please check out the file it made like this:
 
@@ -96,6 +99,10 @@ When it is done, please check out the file it made like this:
 You should see a list of intervals coordinates following the chromosome of your reference chromosome.
 
 With the indel text file, we can then use a function called `IndelRealigner`, which takes as input this `vcf` file to realign bases when possible an minimize mis-called SNPs.
+
+# Realigning indels part 2: Now realinging the indels across all samples
+
+Now that we know where to move bits of the alignment around for all samples, let's do it!
 
 Here is a perl script that executes the `IndelRealigner` function:
 
