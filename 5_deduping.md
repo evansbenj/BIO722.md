@@ -156,7 +156,7 @@ Some points worth noting:
 Many approaches to library construction have a PCR step, which means that some data you generate may have the same start and stop points for both pairs of a read.  This causes an overestimation of confidence and can lead to miscalled genotypes if one allele amplified more than the other.  Typically we therefore remove duplicates ("dedup") before genotyping. 
 
 ```
-#!/usr/bin/perl                                                                                                 \
+#!/usr/bin/perl 
                                                                                                                  
 use warnings;
 use strict;
@@ -166,7 +166,7 @@ use strict;
 # It takes as input a variable, which is the chromosome name (e.g. chr1)
 
 
-my $path_to_reference_genome="/2/scratch/evanslab/monkey_directory/my_monkey_chromosome/";
+my $path_to_reference_genome="/2/scratch/USERNAME/monkey_directory/my_monkey_chromosome/";
 my $reference_genome=$ARGV[0].".fa";
 my $status;
 my @files;
