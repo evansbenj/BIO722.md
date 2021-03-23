@@ -54,7 +54,7 @@ We will need both of these files for steps involving `GATK`..
 
 OK now go back to the `my_bam_files` directory please (`cd ../my_bam_files`). 
 
-We will use `GATK` to identify indels that may be associated with inappropriate mapping differences among the individuals in our study, and then realign them across all individuals. This is done in two steps.  The first uses the `GATK` function called `RealignerTarget` to identify indels in our data. This function produces a text file that has information about the locations of all indels in any individual relative to the reference genome. Because the second step takes a few dozen minutes to run with the full dataset, for class we will work with the subset datasets that you previously mapped to your chromosome.
+We will use `GATK` to identify indels that may be associated with inappropriate mapping differences among the individuals in our study, and then realign them across all individuals. This is done in two steps.  The first uses the `GATK` function called `RealignerTarget` to identify indels in our data. This function produces a text file that has information about the locations of all indels in any individual relative to the reference genome. For class we are working with a subsetted dataset, so this will be pretty quick (seconds).
 
 Here is a perl script that will execute the `RealignerTarget` function in `GATK` on our data:
 
@@ -137,6 +137,12 @@ $status = system($commandline);
 As above, please copy and paste this script, make it executable, and execute it. You could name this script `Step_2_execute_GATK_IndelRealigner.pl`. Please don't forget to modify the name of your reference chromosome as appropriate.
 
 If your run completed successfully, you should see new bam files that have the ending `*_sorted_realigned.bam`. These files should be about the same size as the `*sorted.bam` files.  Please check this by typing `ls -l`.
+
+Some points worth noting:
+* It may not be obvious, but we have been very careful to not overwrite our input files by having output files with the same name  
+* Also very important is that when you are doing chromosome-specific steps, your supporting files should have these chromosomes integrated in their names.  This will prevent you accidentally using an input file from one chromosome for another chromosome.
+* We also have named our `.bam` files in a way that provides information about where we are in the pipeline.  When you are happy with where you are, you can delete the upstream files later to save space.
+* We have named our scripts in a way that indicates what order they were run in (e.g., Step_1_XXX, Step_2_XXX). We should have done this with the earlier alignment file too (we could go back and rename that one "Step_0_xxx).  This is better than naming your files `newnew_final_for_sure.pl`.
 
 
 # Dedupling a bam file
