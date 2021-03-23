@@ -80,7 +80,7 @@ foreach(@files){
     $commandline = $commandline." -I ".$_." ";
 }
 
-$commandline = $commandline."-R ".$path_to_reference_genome.$reference_genome." -o forIndelRealigner.intervals";
+$commandline = $commandline."-R ".$path_to_reference_genome.$reference_genome." -o forIndelRealigner.$ARGV[0].intervals";
 
 $status = system($commandline);
 ```
