@@ -3,9 +3,7 @@
 
 # Genotyping with bcftools
 
-A common way that genotype information is conveyed is the `variant call format` – vcf, which is is described [here](https://en.wikipedia.org/wiki/Variant_Call_Format). Another new format introduced by the [`Genome Analysis Toolkit`](https://software.broadinstitute.org/gatk/) of the Broad Institute is called the genomic variant call format – gvcf; this is described [here](https://gatk.broadinstitute.org/hc/en-us/articles/360035531812-GVCF-Genomic-Variant-Call-Format).
-
-Now lets make a vcf file from our bam files. We have everything we need to make a genotype (vcf) file with all of the samples, including:
+Now lets genotype our variants from our bam files. We have everything we need to make a genotype (variant call format - vcf) file with all of the samples, including:
 * sorted bam files for each sample
 * an index for each bam file (.bai file)
 * a genome (actually a chromosome in our case for one chromosome - chrZZZ.fa) and also supporting files (chrZZZ.amb  chrZZZ.fa.ann  chrZZZ.fa.bwt  chrZZZ.fa.fai  chrZZZ.fa.pac  chrZZZ.fa.sa).
@@ -46,7 +44,7 @@ This will give you the main comment line (which always begins with #CHR in vcf f
 
 # Vcf format
 
-The format of the vcf file is explained [here](https://samtools.github.io/hts-specs/VCFv4.2.pdf).  This is a widely used genotyping format that can be uses as input for many softwares (e.g. the R package [PopGenome](https://cran.r-project.org/web/packages/PopGenome/PopGenome.pdf)) or exported to other formats (e.g. using [PLINK](http://zzz.bwh.harvard.edu/plink/)).
+A common way that genotype information is conveyed is the `variant call format` – vcf, which is is described [here](https://en.wikipedia.org/wiki/Variant_Call_Format) and [here](https://samtools.github.io/hts-specs/VCFv4.2.pdf). This is a widely used genotyping format that can be uses as input for many softwares (e.g. the R package [PopGenome](https://cran.r-project.org/web/packages/PopGenome/PopGenome.pdf)) or exported to other formats (e.g. using [PLINK](http://zzz.bwh.harvard.edu/plink/)). Another new format introduced by the [`Genome Analysis Toolkit`](https://software.broadinstitute.org/gatk/) of the Broad Institute is called the genomic variant call format – gvcf; this is described [here](https://gatk.broadinstitute.org/hc/en-us/articles/360035531812-GVCF-Genomic-Variant-Call-Format).
 
 OK, now let's calculate some summary statistics from these files.  Please click [here](https://github.com/evansbenj/BIO722.md/blob/main/7_summary_statistics.md)
 
