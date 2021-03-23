@@ -41,14 +41,28 @@ ln -s /2/scratch/Bio722_BJE/monkey_directory/my_bam_files/PM602_chr1_sorted.ba* 
 Now please go over to your `my_monkey_chromosome` directory (`cd ../my_monkey_chromosome`) and make some links to these reference files
 ```
 ln -s /2/scratch/Bio722_BJE/monkey_directory/my_monkey_chromosome/chr1* .
+ln -s /2/scratch/Bio722_BJE/monkey_directory/my_monkey_chromosome/chr2* .
+ln -s /2/scratch/Bio722_BJE/monkey_directory/my_monkey_chromosome/chrX* .
 ```
 For those of you that already have a `.bam` file for each sample for your reference chromosome (chrZZZ.fa) please enter your `my_monkey_chromosome` and, while you are in this directory, please make a `.fai` file for your reference chromosome like this:
 ```
 samtools faidx chrZZZ.fa
 ```
+or if you want to work with the ones I made, type this:
+```
+samtools faidx chr1.fa
+samtools faidx chr2.fa
+samtools faidx chrX.fa
+```
 Also, please make a `.dict` file like this:
 ```
 java -jar /usr/local/picard-tools/picard.jar CreateSequenceDictionary REFERENCE=chrZZZ.fa OUTPUT=chrZZZ.dict
+```
+or if you want to work with the ones I made, type this:
+```
+java -jar /usr/local/picard-tools/picard.jar CreateSequenceDictionary REFERENCE=chr1.fa OUTPUT=chr1.dict
+java -jar /usr/local/picard-tools/picard.jar CreateSequenceDictionary REFERENCE=chr2.fa OUTPUT=chr2.dict
+java -jar /usr/local/picard-tools/picard.jar CreateSequenceDictionary REFERENCE=chrX.fa OUTPUT=chrX.dict
 ```
 We will need both of these files for steps involving `GATK`..
 
