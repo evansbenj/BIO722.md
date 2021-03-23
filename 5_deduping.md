@@ -114,6 +114,7 @@ use strict;
 # This script will read in the *_sorted.bam file names in a directory, and                                                           
 # make and execute a GATK command IndelRealigner on these files.  
 # It takes as input a variable, which is the chromosome name (e.g. chr1)
+# and requires that you have run RealignerTargetCreator beforehand
 
 my $path_to_reference_genome="/2/scratch/USERNAME/monkey_directory/my_monkey_chromosome/";
 my $reference_genome=$ARGV[0].".fa";
@@ -147,6 +148,7 @@ Some points worth noting:
 * We also have named our `.bam` files in a way that provides information about where we are in the pipeline.  When you are happy with where you are, you can delete the upstream files later to save space.
 * We have named our scripts in a way that indicates what order they were run in (e.g., Step_1_XXX, Step_2_XXX). We should have done this with the earlier alignment file too (we could go back and rename that one "Step_0_xxx).  This is better than naming your files `newnew_final_for_sure.pl`.
 * We are using scripts that accept variables as input  so we can reuse them for multiple chromsomes, and that automatically detect files in a directory to make sure we don't accidentally miss one due to a typo.
+* We have used comments to remind us what each script does
 
 
 # Dedupling a bam file
@@ -160,7 +162,9 @@ use warnings;
 use strict;
 
 # This script will read in the *_sorted_realigned.bam file names in a directory, and                          
-# dedup them using picard                                                                                         
+# dedups them using picard 
+# It takes as input a variable, which is the chromosome name (e.g. chr1)
+
 
 my $path_to_reference_genome="/2/scratch/evanslab/monkey_directory/my_monkey_chromosome/";
 my $reference_genome=$ARGV[0].".fa";
