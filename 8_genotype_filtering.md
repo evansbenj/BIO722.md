@@ -45,8 +45,7 @@ $status = system($commandline);
 
 
 # flag the vcf file using the indel file and also flag some other low quality variants                                   
-$commandline = "java -Xmx3G -jar /usr/local/gatk/GenomeAnalysisTK.jar -T VariantFiltration -R ".$path_to_reference_genom\
-e.$reference_genome;
+$commandline = "java -Xmx3G -jar /usr/local/gatk/GenomeAnalysisTK.jar -T VariantFiltration -R ".$path_to_reference_genome.$reference_genome;
 $commandline = $commandline." -o ".$vcffile."_flagged.vcf --variant ".$vcffile;
 $commandline = $commandline." --mask ".$vcffile."_indels_only.vcf --maskName INDEL --maskExtension 10";
 $commandline = $commandline." --filterExpression \"QD < 2.0\" --filterName \"QD2\"";
