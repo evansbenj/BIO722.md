@@ -143,6 +143,7 @@ Some points worth noting:
 * Also very important is that when you are doing chromosome-specific steps, your supporting files should have these chromosomes integrated in their names.  This will prevent you accidentally using an input file from one chromosome for another chromosome.
 * We also have named our `.bam` files in a way that provides information about where we are in the pipeline.  When you are happy with where you are, you can delete the upstream files later to save space.
 * We have named our scripts in a way that indicates what order they were run in (e.g., Step_1_XXX, Step_2_XXX). We should have done this with the earlier alignment file too (we could go back and rename that one "Step_0_xxx).  This is better than naming your files `newnew_final_for_sure.pl`.
+* We are using scripts that accept variables as input  so we can reuse them for multiple chromsomes, and that automatically detect files in a directory to make sure we don't accidentally miss one due to a typo.
 
 
 # Dedupling a bam file
