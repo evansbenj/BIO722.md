@@ -16,7 +16,17 @@ After that, we will:
 
 # Realigning indels
 
-If you didn't manage to make it to the point we left off, please make symbolic links to these `.bam` and the corresponding index files (`.bai`) files from within your `my_bam_files` folder:
+If you didn't manage to make it to the point we left off, please make a folder in your `/2/scratch/USERNAME` directory called `monkey_directory` and enter that directory like this:
+```
+cd /2/scratch/USERNAME; mkdir monkey_directory; cd monkey_directory
+```
+
+Now please make some more directories that will hold our bam files and reference genome (chromosome):
+```
+mkdir my_bam_files; mkdir my_monkey_chromosome
+```
+
+Now please enter your my_bam_files directory (`cd my_bam_files`) and make some symbolic links to these `.bam` and the corresponding index files (`.bai`) files that I made for you from within your `my_bam_files` folder:
 ```
 ln -s /2/scratch/Bio722_BJE/monkey_directory/my_bam_files/PF515_chr1_sorted.ba* .
 ln -s /2/scratch/Bio722_BJE/monkey_directory/my_bam_files/PM561_chr1_sorted.ba* .
@@ -28,21 +38,19 @@ ln -s /2/scratch/Bio722_BJE/monkey_directory/my_bam_files/PM584_chr1_sorted.ba* 
 ln -s /2/scratch/Bio722_BJE/monkey_directory/my_bam_files/PM592_chr1_sorted.ba* .
 ln -s /2/scratch/Bio722_BJE/monkey_directory/my_bam_files/PM602_chr1_sorted.ba* .
 ```
-You will also need to go up a directory and into your `my_monkey_chromosome` directory and make some links to these reference files
+Now please go over to your `my_monkey_chromosome` directory (`cd ../my_monkey_chromosome`) and make some links to these reference files
 ```
 ln -s /2/scratch/Bio722_BJE/monkey_directory/my_monkey_chromosome/chr1* .
 ```
-
-While you are in this directory, please make a `.fai` file for your reference chromosome like this:
+For those of you that already have a `.bam` file for each sample for your reference chromosome (chrZZZ.fa) please enter your `my_monkey_chromosome` and, while you are in this directory, please make a `.fai` file for your reference chromosome like this:
 ```
 samtools faidx chrZZZ.fa
 ```
-
 Also, please make a `.dict` file like this:
 ```
 java -jar /usr/local/picard-tools/picard.jar CreateSequenceDictionary REFERENCE=chrZZZ.fa OUTPUT=chrZZZ.dict
 ```
-
+We will need both of these files for steps involving `GATK`..
 
 OK now go back to the `my_bam_files` directory please. 
 
