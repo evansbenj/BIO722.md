@@ -27,3 +27,5 @@ perl -E "say 3.58237/((4.67155+4.25618)/2)"
 ```
 
 What does this suggest about the variance in reproductive success in male versus female macaque monkeys?
+
+# If we have time, let's do one more quality control step (we'd normally do this before calculating summary statistics). Please click here
