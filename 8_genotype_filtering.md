@@ -60,7 +60,7 @@ $status = system($commandline);
 
 # output a new filtered genotype file using SelectVariants                                                                                                                                              
 $commandline = "java -Xmx2g -jar /usr/local/gatk/GenomeAnalysisTK.jar -T SelectVariants -R ".$path_to_reference_genome.$reference_genome;
-$commandline = $commandline." --variant ".$vcffile."_flagged.vcf -o ".$vcffile."_filtered.vcf -select \'vc.isNotFiltered()\'";
+$commandline = $commandline." --variant ".$vcffile."_flagged.vcf -o ".$vcffile."_filtered.vcf.gz -select \'vc.isNotFiltered()\'";
 print $commandline,"\n";
 $status = system($commandline); 
 
@@ -80,8 +80,6 @@ which flags sites with an average depth of coverage less than 5,
 
 `--filterExpression "MQ0 >= 4 && ((MQ0 / DP) > 0.1)" --filterName "HARD_TO_VALIDATE" `
 
-which flags sites with at least 4 reads that map well to another part of the genome and where these reads comprise more than 10% of the reads at that position, and
+which flags sites with at least 4 reads that map well to another part of the genome and where these reads comprise more than 10% of the reads at that position.
 
-`--filterExpression "CHROM == 'chrY' && vc.getGenotype('PF515').isHom()" --filterName "Y_chrom_homoz_filter_for_PF515"`
 
-which flags sites on the Y chromosome that are homozygous in individual PF515.
