@@ -134,7 +134,10 @@ $status = system($commandline);
 
 ```
 
-As above, please copy and paste this script, make it executable, and execute it. You could name this script `Step_2_execute_GATK_IndelRealigner.pl`. Please don't forget to modify the name of your reference chromosome as appropriate.
+As above, please copy and paste this script, make it executable, and execute it. You could name this script `Step_2_execute_GATK_IndelRealigner.pl`. Please don't forget to modify the path of your reference chromosome as appropriate.  After making the script executable (`chmod 755 Step_2_execute_GATK_IndelRealigner.pl`), you can execute it like this:
+```
+./Step_2_execute_GATK_IndelRealigner.pl chrZZZ
+```
 
 If your run completed successfully, you should see new bam files that have the ending `*_sorted_realigned.bam`. These files should be about the same size as the `*sorted.bam` files.  Please check this by typing `ls -l`.
 
@@ -178,6 +181,9 @@ foreach(@files){
 
 ```
 
-
+Please copy and paste this into a new file called `Step_3_dedup.pl`.  After making the script executable (`chmod 755 Step_3_dedup.pl`), you can execute it like this:
+```
+./Step_3_dedup chrZZ
+```
 
 ## OK now we are ready to combine our bam files and do some genotyping. Please click [here](https://github.com/evansbenj/BIO722.md/blob/main/6_genotyping.md)
