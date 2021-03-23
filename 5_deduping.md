@@ -10,8 +10,9 @@ The pipeline we ran through last time took you from raw next gen data to a sorte
 
 
 After that, we will:
-* genotype our data and
+* genotype our data 
 * Filter genotypes
+* Calculate summary statistics
 
 # Realigning indels
 
