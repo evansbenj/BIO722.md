@@ -185,7 +185,7 @@ foreach(@files){
 
 ```
 
-Please copy and paste this into a new file called `Step_3_dedup.pl`.  After making the script executable (`chmod 755 Step_3_dedup.pl`), you can execute it like this:
+Please copy and paste this into a new file called `Step_3_dedup.pl`.  After modifying the reference genome path to fix the `USERNAME` and then making the script executable (`chmod 755 Step_3_dedup.pl`), you can execute it like this:
 ```
 ./Step_3_dedup chrZZ
 ```
