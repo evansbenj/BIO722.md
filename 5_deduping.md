@@ -38,7 +38,7 @@ ln -s /2/scratch/Bio722_BJE/monkey_directory/my_bam_files/PM584_chr1_sorted.ba* 
 ln -s /2/scratch/Bio722_BJE/monkey_directory/my_bam_files/PM592_chr1_sorted.ba* .
 ln -s /2/scratch/Bio722_BJE/monkey_directory/my_bam_files/PM602_chr1_sorted.ba* .
 ```
-Now please go over to your `my_monkey_chromosome` directory (`cd ../my_monkey_chromosome`) and make some links to these reference files
+Now please go over to your `my_monkey_chromosome` directory (`cd ../my_monkey_chromosome`) and make some links to these reference files and their supporting files with the same prefixes:
 ```
 ln -s /2/scratch/Bio722_BJE/monkey_directory/my_monkey_chromosome/chr1* .
 ln -s /2/scratch/Bio722_BJE/monkey_directory/my_monkey_chromosome/chr2* .
