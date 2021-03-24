@@ -10,16 +10,16 @@ For the sake of time and because it is somewhat simplier, today we will use bcft
 * an index for each bam file (.bai file)
 * a genome (actually a chromosome in our case for one chromosome - chrZZZ.fa) and also supporting files (chrZZZ.amb  chrZZZ.fa.ann  chrZZZ.fa.bwt  chrZZZ.fa.fai  chrZZZ.fa.pac  chrZZZ.fa.sa).
 
-Please start a screen and type this command:
+Please enter this command (after changing the ZZZ to match your chromosomes):
 
 ```
 bcftools mpileup -Ou -f ../my_monkey_chromosome/chrZZZ.fa PF515_chrZZZ_sorted_realigned_dedup.bam PM561_chrZZZ_sorted_realigned_dedup.bam PM565_chrZZZ_sorted_realigned_dedup.bam PM566_chrZZZ_sorted_realigned_dedup.bam PM567_chrZZZ_sorted_realigned_dedup.bam PM582_chrZZZ_sorted_realigned_dedup.bam PM584_chrZZZ_sorted_realigned_dedup.bam PM592_chrZZZ_sorted_realigned_dedup.bam PM602_chrZZZ_sorted_realigned_dedup.bam | bcftools call -mv -Oz -o allsamples_chrZZZ_merged_sorted_realigned_dedup.bam.vcf.gz
 
 ```
 
-The command above first uses the bcftools mpileup command. You can check out what the options are by typing `bcftools` and `bcftools mpileup`. You will see that the `mpileup` command generates genotype likelihoods from multiple `.bam` files. This is then piped to the `bcftools call` command, which does SNP and indel genotype calling.  The `-Ou` and `-Oz` command asks `bcftools` generate uncompressed BCF output and a compressed vcf output respectively.
+This should finish quickly because we are working with small subsets of the data. 
 
-This should finish quickly because we are working with small subsets of the data. Please exit the screen by typing `ctrl-a` and `ctrl-d`
+The command above first uses the bcftools mpileup command. You can check out what the options are by typing `bcftools` and `bcftools mpileup`. You will see that the `mpileup` command generates genotype likelihoods from multiple `.bam` files. This is then piped to the `bcftools call` command, which does SNP and indel genotype calling.  The `-Ou` and `-Oz` command asks `bcftools` generate uncompressed BCF output and a compressed vcf output respectively.
 
 Because we are working with such a small (subsetted) dataset, your bam files have only very few reads that mapped to your chromosome and they are at very low depth. At this point, let's work with files I made earlier using the complete dataset and pretend that you made them.  GREAT JOB!!!  
 
