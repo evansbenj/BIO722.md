@@ -3,7 +3,7 @@
 
 # Genotyping with bcftools
 
-There are many programs that will call genotypes from `.bam` files; the ones I usually use are [GATK](https://gatk.broadinstitute.org/hc/en-us) and [bcftools](http://samtools.github.io/bcftools/bcftools.html). 
+There are many programs that will call genotypes from `.bam` files; the ones I usually use are [GATK](https://gatk.broadinstitute.org/hc/en-us) and [bcftools](http://samtools.github.io/bcftools/bcftools.html). `GATK` has a procedure called base quality score recalibration (`BQSR`) which allows you to alter quality scores to more accurately reflect the error rate, which can vary in sample-specific ways depending on genomic context and technical variation. This procedure is perfoermed prior to genotyping (it generates new `.bam` files that potentially have new quality scores for every base pair of read. We're not going to go over this today, but please feel free to ask me about this later if you want.
 
 For the sake of time and because it is somewhat simplier, today we will use bcftools to genotype our bam files. We have everything we need to make a genotype (variant call format - vcf) file with all of the samples, including:
 * sorted bam files for each sample
