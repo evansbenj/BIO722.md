@@ -50,7 +50,7 @@ This will give you the main comment line (which always begins with #CHR in vcf f
 
 A common way that genotype information is conveyed is the `variant call format` – vcf, which is is described [here](https://en.wikipedia.org/wiki/Variant_Call_Format) and [here](https://samtools.github.io/hts-specs/VCFv4.2.pdf). This is a widely used genotyping format that can be uses as input for many softwares (e.g. the R package [PopGenome](https://cran.r-project.org/web/packages/PopGenome/PopGenome.pdf)) or exported to other formats (e.g. using [PLINK](http://zzz.bwh.harvard.edu/plink/)). Another new format introduced by the [`Genome Analysis Toolkit`](https://software.broadinstitute.org/gatk/) of the Broad Institute is called the genomic variant call format – gvcf; this is described [here](https://gatk.broadinstitute.org/hc/en-us/articles/360035531812-GVCF-Genomic-Variant-Call-Format).
 
-OK, now let's calculate some summary statistics from these files.  Please click [here](https://github.com/evansbenj/BIO722.md/blob/main/7_summary_statistics.md)
+## OK, now let's calculate some summary statistics from these files.  Please click [here](https://github.com/evansbenj/BIO722.md/blob/main/7_summary_statistics.md)
 
 
 
