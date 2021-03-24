@@ -5,14 +5,14 @@
 
 Now that we have our genotypes, there are lots of things we can do!  We don't have time to much, but as a simple example, let's calculate pairwise nucleotide diversity for our samples using `vcftools`.
 
-This command outputs pairwise nucleotide diversity by site
+These commands output pairwise nucleotide diversity by site in windows.  This takes a while so please launch each one in a separate screen.
 ```
 vcftools --gzvcf chr1_only.recode.vcf.gz --chr chr1 --window-pi 10000 --out chr1_analysis
 vcftools --gzvcf chr2_only.recode.vcf.gz --chr chr2 --window-pi 10000 --out chr2_analysis
 vcftools --gzvcf chrX_only.recode.vcf.gz --chr chrX --window-pi 10000 --out chrX_analysis
 ```
 
-We can get an average of the diversity across all variable sites like this:
+Once this is done, we can get an average of the diversity across all variable sites like this:
 ```
 cat chr1_analysis.windowed.pi | awk '{sum+=$5} END { print "Average = ",sum/NR}'
 cat chr2_analysis.windowed.pi | awk '{sum+=$5} END { print "Average = ",sum/NR}'
