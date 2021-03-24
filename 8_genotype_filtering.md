@@ -66,20 +66,14 @@ $status = system($commandline);
 
 ```
 
+The meaning of these parameters and more rationale for hard filtering is provided [here](https://gatk.broadinstitute.org/hc/en-us/articles/360035531112--How-to-Filter-variants-either-with-VQSR-or-by-hard-filtering#2).
+
 Note that this part of the `VariantFiltration` commandline:
 
 ` --mask indels_only.vcf --maskName INDEL --maskExtension 10`
 
-will flag indels and also sites +/- 10 bp from indels.
+will flag indels and also sites +/- 10 bp from indels. This is a conservative measure to guard against variants that might arise due to indel misalignment.
 
-Other examples one could add to the VariantFilteration command line for Ben to discuss include:
 
-`--filterExpression "DP < 5" --filterName "LowCoverage" `
-
-which flags sites with an average depth of coverage less than 5,
-
-`--filterExpression "MQ0 >= 4 && ((MQ0 / DP) > 0.1)" --filterName "HARD_TO_VALIDATE" `
-
-which flags sites with at least 4 reads that map well to another part of the genome and where these reads comprise more than 10% of the reads at that position.
 
 
