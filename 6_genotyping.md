@@ -21,7 +21,9 @@ The command above first uses the bcftools mpileup command. You can check out wha
 
 This should finish quickly because we are working with small subsets of the data. Please exit the screen by typing `ctrl-a` and `ctrl-d`
 
-Because we are working with such a small (subsetted) dataset, your bam files have only very few reads that mapped to your chromosome and they are at very low depth. At this point, let's work with files I made earlier using the complete dataset.  Please make a symbolic link to thes files like this:
+Because we are working with such a small (subsetted) dataset, your bam files have only very few reads that mapped to your chromosome and they are at very low depth. At this point, let's work with files I made earlier using the complete dataset and pretend that you made them.  GREAT JOB!!!  
+
+Please make a symbolic link to thes files like this:
 
 ```
 ln -s /2/scratch/Bio722_BJE/chr1_only.recode.vcf.gz
