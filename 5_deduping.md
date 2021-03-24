@@ -14,7 +14,7 @@ After that, we will:
 * Filter genotypes
 * Calculate summary statistics
 
-# Realigning indels part 1: Identifying the indels
+# First let's make sure we are all on the same page...
 
 If you didn't manage to make it to the point we left off, please make a folder in your `/2/scratch/USERNAME` directory called `monkey_directory` and enter that directory like this:
 ```
@@ -68,7 +68,10 @@ We will need both of these files for steps involving `GATK`..
 
 OK now go back to the `my_bam_files` directory please (`cd ../my_bam_files`). 
 
-We will use `GATK` to identify indels that may be associated with inappropriate mapping differences among the individuals in our study, and then realign them across all individuals. This is done in two steps.  The first uses the `GATK` function called `RealignerTarget` to identify indels in our data. This function produces a text file that has information about the locations of all indels in any individual relative to the reference genome. For class we are working with a subsetted dataset, so this will be pretty quick (seconds).
+
+# Realigning indels part 1: Identifying the indels
+
+OK hopefully all of us are all set now. We will use `GATK` to identify indels that may be associated with inappropriate mapping differences among the individuals in our study, and then realign them across all individuals. This is done in two steps.  The first uses the `GATK` function called `RealignerTarget` to identify indels in our data. This function produces a text file that has information about the locations of all indels in any individual relative to the reference genome. For class we are working with a subsetted dataset, so this will be pretty quick (seconds).
 
 Here is a perl script that will execute the `RealignerTarget` function in `GATK` on our data:
 
