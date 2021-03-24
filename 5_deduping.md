@@ -204,7 +204,7 @@ foreach(@files){
 
 Please copy and paste this into a new file called `Step_3_dedup.pl`.  After modifying the reference genome path to fix the `USERNAME` and then making the script executable (`chmod 755 Step_3_dedup.pl`), you can execute it like this:
 ```
-./Step_3_dedup chrZZ
+./Step_3_dedup.pl chrZZ
 ```
 
 ## OK now we are ready to combine our bam files and do some genotyping. Please click [here](https://github.com/evansbenj/BIO722.md/blob/main/6_genotyping.md)
