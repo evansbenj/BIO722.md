@@ -26,9 +26,9 @@ Because we are working with such a small (subsetted) dataset, your bam files hav
 Please make a symbolic link to thes files like this:
 
 ```
-ln -s /2/scratch/Bio722_BJE/chr1_only.recode.vcf.gz
-ln -s /2/scratch/Bio722_BJE/chr2_only.recode.vcf.gz
-ln -s /2/scratch/Bio722_BJE/chrX_only.recode.vcf.gz
+ln -s /2/scratch/Bio722_BJE/chr1_only.recode.vcf.gz .
+ln -s /2/scratch/Bio722_BJE/chr2_only.recode.vcf.gz .
+ln -s /2/scratch/Bio722_BJE/chrX_only.recode.vcf.gz .
 ```
 
 And now check out this file like this:
