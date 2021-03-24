@@ -3,7 +3,9 @@
 
 # Genotyping with bcftools
 
-Now lets genotype our variants from our bam files. We have everything we need to make a genotype (variant call format - vcf) file with all of the samples, including:
+There are many programs that will call genotypes from `.bam` files; the ones I usually use are [GATK](https://gatk.broadinstitute.org/hc/en-us) and [bcftools](http://samtools.github.io/bcftools/bcftools.html). 
+
+For the sake of time and because it is somewhat simplier, today we will use bcftools to genotype our bam files. We have everything we need to make a genotype (variant call format - vcf) file with all of the samples, including:
 * sorted bam files for each sample
 * an index for each bam file (.bai file)
 * a genome (actually a chromosome in our case for one chromosome - chrZZZ.fa) and also supporting files (chrZZZ.amb  chrZZZ.fa.ann  chrZZZ.fa.bwt  chrZZZ.fa.fai  chrZZZ.fa.pac  chrZZZ.fa.sa).
